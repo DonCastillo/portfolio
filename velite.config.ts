@@ -1,5 +1,18 @@
 import { defineCollection, defineConfig, s } from "velite";
 
+// s.mdx() reports an empty file body as an issue, which --strict turns into a build
+// failure. The long-form body is optional, so compile it only when there is one.
+const mdx = s.mdx();
+const optionalMdx = s
+  .custom<string | undefined>((i) => i === undefined || typeof i === "string")
+  .transform(async (value, { meta, addIssue }) => {
+    if (!(value ?? meta.content)?.trim()) return undefined;
+    const result = await mdx.safeParseAsync(value, { meta });
+    if (result.success) return result.data;
+    result.error.issues.forEach(addIssue);
+    return undefined;
+  });
+
 // One MDX file per project. Frontmatter is validated here; with --strict an
 // invalid file fails the build (see PLAN.md section 5 for the field rules).
 const projects = defineCollection({
@@ -49,7 +62,7 @@ const projects = defineCollection({
 
     featured: s.boolean().default(false),
     order: s.number(),
-    body: s.mdx(), // optional longer write-up
+    body: optionalMdx, // optional longer write-up
   }),
 });
 
