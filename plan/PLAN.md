@@ -195,12 +195,12 @@ Rules:
 │   │   │             Metrics.tsx · Highlights.tsx · StackTags.tsx · Gallery.tsx · NextProject.tsx
 │   │   ├── contact/  ContactForm.tsx
 │   │   └── ui/       Button.tsx · Badge.tsx · Placeholder.tsx · ProjectImage.tsx (the one place images are rendered)
-│   ├── data/
+│   ├── data/                  # plain data, no logic
+│   │   ├── site.ts            # name, title, location, links, nav items
 │   │   ├── experience.ts      # typed roles for the home page
 │   │   └── education.ts
-│   └── lib/
+│   └── lib/                   # helper logic
 │       ├── projects.ts        # getProjects, getProject, getFeatured, groupByCategory, getNext
-│       ├── site.ts            # name, title, links, location
 │       └── seo.ts
 ├── assets/projects/<slug>/    # original screenshots (PNG/JPG), input to the image script
 ├── scripts/optimize-images.mjs  # sharp: resize + convert assets/ → public/projects/
@@ -281,8 +281,8 @@ Each milestone ends with a deploy to a preview URL.
 
 ### M1: Layout shell (≈ 3 hrs)
 - [x] Tokens + fonts in `globals.css` / `layout.tsx`
-- [ ] `Sidebar`, `NavLink` (active state, including nested `/projects/*`), `MobileNav`
-- [ ] Skip link, `not-found.tsx`, `site.ts`
+- [x] `Sidebar`, `NavLink` (active state, including nested `/projects/*`), `MobileNav`
+- [ ] Skip link, `not-found.tsx`, `data/site.ts`
 
 **Done when:** all four routes exist with placeholder content and the nav works on desktop and mobile.
 

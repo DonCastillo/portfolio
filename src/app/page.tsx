@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="mx-auto max-w-220 px-5 py-12 md:px-16 md:py-22">
+    <>
       <p className="font-mono text-xs tracking-wide text-subtle uppercase">
         Full Stack Software Engineer · Calgary, AB (relocating)
       </p>
@@ -16,6 +16,6 @@ export default function Home() {
           GitHub
         </a>
       </p>
-    </main>
+    </>
   );
 }
