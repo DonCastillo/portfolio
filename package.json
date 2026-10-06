@@ -11,7 +11,8 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "next typegen && tsc --noEmit"
+    "typecheck": "pnpm content && next typegen && tsc --noEmit",
+    "content": "velite build --strict"
   },
   "dependencies": {
     "next": "16.3.8",
@@ -30,7 +31,8 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "sharp": "^0.35.5",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "velite": "0.4.0"
   },
   "packageManager": "pnpm@9.14.2"
 }

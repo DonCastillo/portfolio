@@ -287,7 +287,7 @@ Each milestone ends with a deploy to a preview URL.
 **Done when:** all four routes exist with placeholder content and the nav works on desktop and mobile.
 
 ### M2: Content layer (≈ 2 hrs)
-- [ ] Velite config + schema (section 5)
+- [x] Velite config + schema (section 5)
 - [ ] `lib/projects.ts` helpers with unit-level type safety
 - [ ] Write `gac-paq.mdx` as the reference project (real content, placeholder images)
 
