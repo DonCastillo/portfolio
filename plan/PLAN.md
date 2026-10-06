@@ -274,7 +274,7 @@ Each milestone ends with a deploy to a preview URL.
 - [x] Create public repo `portfolio`; Next.js + TS strict + Tailwind v4 + ESLint + Prettier + pnpm
 - [x] `output: "export"` and `images: { unoptimized: true }` in `next.config.ts`, `netlify.toml`
 - [x] `scripts/optimize-images.mjs` with `sharp`; run it as `pnpm images` and in `prebuild`
-- [ ] Connect Netlify; first deploy of the hello-world page
+- [x] Connect Netlify; first deploy of the hello-world page
 - [ ] Add `PLAN.md`, a stub `README.md`, and a CI workflow (lint, typecheck, build)
 
 **Done when:** a preview URL deploys from a PR and CI is green.
