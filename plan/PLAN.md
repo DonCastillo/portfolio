@@ -282,7 +282,7 @@ Each milestone ends with a deploy to a preview URL.
 ### M1: Layout shell (≈ 3 hrs)
 - [x] Tokens + fonts in `globals.css` / `layout.tsx`
 - [x] `Sidebar`, `NavLink` (active state, including nested `/projects/*`), `MobileNav`
-- [ ] Skip link, `not-found.tsx`, `data/site.ts`
+- [x] Skip link, `not-found.tsx`, `data/site.ts`
 
 **Done when:** all four routes exist with placeholder content and the nav works on desktop and mobile.
 
