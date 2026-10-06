@@ -275,7 +275,7 @@ Each milestone ends with a deploy to a preview URL.
 - [x] `output: "export"` and `images: { unoptimized: true }` in `next.config.ts`, `netlify.toml`
 - [x] `scripts/optimize-images.mjs` with `sharp`; run it as `pnpm images` and in `prebuild`
 - [x] Connect Netlify; first deploy of the hello-world page
-- [ ] Add `PLAN.md`, a stub `README.md`, and a CI workflow (lint, typecheck, build)
+- [x] Add `PLAN.md`, a stub `README.md`, and a CI workflow (lint, typecheck, build)
 
 **Done when:** a preview URL deploys from a PR and CI is green.
 
