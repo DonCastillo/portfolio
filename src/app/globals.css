@@ -1,1 +1,54 @@
 @import "tailwindcss";
+
+/* Design tokens (plan §4). Colors are plain CSS variables, so a later
+   [data-theme="dark"] block can override them without touching components. */
+@theme {
+  /* Drop Tailwind's default palette: only these colors exist. */
+  --color-*: initial;
+  --color-white: #ffffff;
+
+  --color-bg: #fafaf8;
+  --color-surface: #f0f0ec; /* active nav, callouts */
+  --color-placeholder: #edede8; /* image placeholders */
+  --color-border: #e4e4e0;
+  --color-border-strong: #d4d4ce;
+  --color-ink: #18181b;
+  --color-ink-2: #27272a;
+  --color-body: #3f3f46;
+  --color-muted: #52525b;
+  --color-subtle: #5b5b63; /* smallest text that still passes 4.5:1 */
+  --color-accent: #0f6e6e; /* deep teal */
+  --color-accent-hover: #0b5454;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* Type scale: hero 72 (44 on mobile), page H1 56. */
+  --text-hero: 4.5rem;
+  --text-hero--line-height: 1;
+  --text-hero--letter-spacing: -0.035em;
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.03em;
+}
+
+/* Font variables come from next/font on <html>, so resolve them inline. */
+@theme inline {
+  --font-sans: var(--font-geist), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-bg font-sans text-body antialiased;
+  }
+
+  :focus-visible {
+    @apply rounded-sm outline-2 outline-offset-2 outline-accent;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
+}

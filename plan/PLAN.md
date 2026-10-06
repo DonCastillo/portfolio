@@ -280,7 +280,7 @@ Each milestone ends with a deploy to a preview URL.
 **Done when:** a preview URL deploys from a PR and CI is green.
 
 ### M1: Layout shell (≈ 3 hrs)
-- [ ] Tokens + fonts in `globals.css` / `layout.tsx`
+- [x] Tokens + fonts in `globals.css` / `layout.tsx`
 - [ ] `Sidebar`, `NavLink` (active state, including nested `/projects/*`), `MobileNav`
 - [ ] Skip link, `not-found.tsx`, `site.ts`
 
