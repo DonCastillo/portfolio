@@ -7,7 +7,7 @@
     "images": "node scripts/optimize-images.mjs",
     "prebuild": "pnpm images",
     "build": "next build",
-    "start": "next start",
+    "start": "pnpm dlx serve@14 out",
     "lint": "eslint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
