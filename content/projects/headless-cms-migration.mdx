@@ -1,0 +1,43 @@
+---
+# PLACEHOLDER CONTENT: fake copy, metrics and image paths to build against.
+# Replace every field with real details before launch (see PLAN.md section 11).
+title: Headless CMS Migration
+slug: headless-cms-migration
+category: professional
+summary: Moved 20+ client sites from hand-edited static Hugo builds to a shared Directus CMS, so clients edit their own content and changes ship in minutes.
+role: Full Stack Developer
+client: Tangle Media
+period: "2022 – 2023"
+status: shipped
+
+links: {}
+sourceNote: Source private (client work)
+
+metrics:
+  - { value: "20+", label: "sites migrated" }
+  - { value: "weeks", label: "delivery, down from months" }
+
+highlights:
+  - Designed a shared Directus schema that covers the content models of 20+ client sites.
+  - Wrote migration scripts that moved existing Hugo Markdown and front matter into Directus without manual re-entry.
+  - Built preview builds on Netlify so clients see their edits before publishing.
+  - Cut new-site delivery from months to weeks by reusing one CMS setup across clients.
+
+stack:
+  - Directus
+  - Hugo
+  - Node.js
+  - PostgreSQL
+  - Netlify CI/CD
+
+cover:
+  src: /projects/headless-cms-migration/cover.webp
+  alt: Architecture diagram showing Directus feeding content to Hugo builds on Netlify
+
+gallery:
+  - src: /projects/headless-cms-migration/01.webp
+    alt: Before and after architecture, from hand-edited Hugo repos to a shared Directus CMS
+    caption: Hugo to Directus
+
+order: 3
+---
