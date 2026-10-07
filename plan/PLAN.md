@@ -296,7 +296,7 @@ Each milestone ends with a deploy to a preview URL.
 ### M3: Project page (≈ 4 hrs)
 - [x] `ProjectHeader`, `ProjectLinks` (hide missing, show source note), `DemoVideo` (click to load)
 - [x] `Metrics`, `Highlights`, `StackTags`, `Gallery` + lightbox, `NextProject`
-- [ ] `generateStaticParams`, `generateMetadata`
+- [x] `generateStaticParams`, `generateMetadata`
 
 **Done when:** `/projects/gac-paq` matches the mockup at 1440px and 390px.
 
