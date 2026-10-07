@@ -289,12 +289,12 @@ Each milestone ends with a deploy to a preview URL.
 ### M2: Content layer (≈ 2 hrs)
 - [x] Velite config + schema (section 5)
 - [x] `lib/projects.ts` helpers with unit-level type safety
-- [ ] Write `gac-paq.mdx` as the reference project (real content, placeholder images)
+- [x] Write `gac-paq.mdx` as the reference project (real content, placeholder images)
 
 **Done when:** an invalid frontmatter field fails the build with a clear error.
 
 ### M3: Project page (≈ 4 hrs)
-- [ ] `ProjectHeader`, `ProjectLinks` (hide missing, show source note), `DemoVideo` (click to load)
+- [x] `ProjectHeader`, `ProjectLinks` (hide missing, show source note), `DemoVideo` (click to load)
 - [ ] `Metrics`, `Highlights`, `StackTags`, `Gallery` + lightbox, `NextProject`
 - [ ] `generateStaticParams`, `generateMetadata`
 

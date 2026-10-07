@@ -1,0 +1,50 @@
+---
+# PLACEHOLDER CONTENT: fake copy, metrics, links and image paths to build against.
+# Replace every field with real details before launch (see PLAN.md section 11).
+title: Media Optimization Pipeline
+slug: media-optimization-pipeline
+category: professional
+summary: An automated pipeline that resizes, compresses and serves images and video for a portfolio of client websites, cutting bandwidth without any manual work from editors.
+role: Full Stack Developer
+client: Tangle Media
+period: "2021 – 2023"
+status: shipped
+
+links:
+  live: https://example.com
+sourceNote: Source private (client work)
+
+metrics:
+  - { value: "−90%", label: "bandwidth" }
+  - { value: "2.1s", label: "faster LCP on mobile" }
+  - { value: "20+", label: "sites on the pipeline" }
+
+highlights:
+  - Built an upload-time pipeline that converts images to WebP and AVIF in five responsive sizes.
+  - Cut median page weight by 90% across 20+ client sites by replacing hand-exported assets.
+  - Moved video to adaptive streaming with generated posters, so pages no longer load full MP4 files.
+  - Wrote the cache and CDN rules that let processed media be served for a year without re-fetching.
+
+stack:
+  - Node.js
+  - TypeScript
+  - Sharp
+  - FFmpeg
+  - AWS S3
+  - CloudFront
+
+cover:
+  src: /projects/media-optimization-pipeline/cover.webp
+  alt: Diagram of the upload, processing and delivery stages of the media pipeline
+
+gallery:
+  - src: /projects/media-optimization-pipeline/01.webp
+    alt: Architecture diagram from editor upload through processing to the CDN
+    caption: Pipeline architecture
+  - src: /projects/media-optimization-pipeline/02.webp
+    alt: Bar chart of page weight before and after the pipeline on five client sites
+    caption: Page weight before and after
+
+featured: true
+order: 2
+---
