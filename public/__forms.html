@@ -1,0 +1,22 @@
+<!doctype html>
+<!--
+  Netlify Forms detection only. Netlify reads this static file at deploy to
+  register the "contact" form; ContactForm.tsx posts to /__forms.html with
+  fetch. Keep the field names here in sync with ContactForm.tsx.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Forms</title>
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
+      <input name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

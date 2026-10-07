@@ -310,7 +310,7 @@ Each milestone ends with a deploy to a preview URL.
 - [x] `data/experience.ts`, `data/education.ts`
 
 ### M6: Contact (≈ 2 hrs)
-- [ ] `ContactForm` + `public/__forms.html` + honeypot
+- [x] `ContactForm` + `public/__forms.html` + honeypot
 - [ ] Inline states; test a real submission on the Netlify preview
 
 ### M7: SEO, analytics, polish (≈ 3 hrs)
