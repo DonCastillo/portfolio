@@ -301,7 +301,7 @@ Each milestone ends with a deploy to a preview URL.
 **Done when:** `/projects/gac-paq` matches the mockup at 1440px and 390px.
 
 ### M4: Projects index (≈ 2 hrs)
-- [ ] `ProjectCard` with badges (in progress, award) and event line
+- [x] `ProjectCard` with badges (in progress, award) and event line
 - [ ] Grouped sections; empty groups hidden
 - [ ] Add MDX files for media pipeline, CMS migration and MarkBound
 

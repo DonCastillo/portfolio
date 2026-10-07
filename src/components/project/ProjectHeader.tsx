@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Badge } from "@/components/ui/Badge";
 import type { Project } from "@/lib/projects";
 
 type ProjectHeaderProps = {
@@ -34,11 +35,7 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
         <h1 className="text-[2.5rem] leading-tight font-semibold tracking-tight text-ink md:text-display">
           {title}
         </h1>
-        {project.status === "in-progress" && (
-          <span className="rounded-sm border border-border-strong px-2 py-1 font-mono text-xs tracking-wide text-muted uppercase">
-            In progress
-          </span>
-        )}
+        {project.status === "in-progress" && <Badge>In progress</Badge>}
       </div>
 
       <p className="mt-5 max-w-170 text-lg leading-relaxed md:text-xl">
