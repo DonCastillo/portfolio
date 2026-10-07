@@ -314,7 +314,7 @@ Each milestone ends with a deploy to a preview URL.
 - [ ] Inline states; test a real submission on the Netlify preview
 
 ### M7: SEO, analytics, polish (≈ 3 hrs)
-- [ ] OG images, sitemap, robots, JSON-LD
+- [x] OG images, sitemap, robots, JSON-LD
 - [ ] Analytics script
 - [ ] Accessibility pass (keyboard only, screen reader spot check, axe)
 - [ ] Playwright smoke tests + Lighthouse CI added to the workflow

@@ -17,3 +17,15 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# OG images are exported as extensionless files (opengraph-image); without this
+# Netlify can't infer the type and social crawlers may reject them.
+[[headers]]
+  for = "/opengraph-image"
+  [headers.values]
+    Content-Type = "image/png"
+
+[[headers]]
+  for = "/projects/*/opengraph-image"
+  [headers.values]
+    Content-Type = "image/png"

@@ -23,6 +23,13 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description: `Portfolio of ${site.name}, ${site.title}.`,
+  // Images come from the opengraph-image files; X falls back to og:image.
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    locale: "en_CA",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
