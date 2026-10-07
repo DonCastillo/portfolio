@@ -22,3 +22,15 @@ export const externalLinks = [
   { href: site.links.linkedin, label: "LinkedIn" },
   { href: site.links.credly, label: "Credly" },
 ] as const;
+
+/** Hero intro on the home page. */
+export const intro =
+  "I build web and mobile apps that work at scale, including a research app used in 17 countries and 23 languages, and CMS platforms that non-technical teams can actually run themselves.";
+
+/** Impact strip on the home page. */
+export const impact = [
+  { value: "5+ yrs", label: "Professional full stack experience" },
+  { value: "17 · 23", label: "Countries and languages, one mobile app" },
+  { value: "−90%", label: "Network bandwidth across client sites" },
+  { value: "20+", label: "Sites migrated to a headless CMS" },
+] as const;

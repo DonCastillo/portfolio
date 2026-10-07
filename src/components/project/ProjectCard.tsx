@@ -8,12 +8,18 @@ type ProjectCardProps = {
   project: Project;
   /** Load the cover eagerly (cards above the fold). */
   priority?: boolean;
+  /** Hide the period where cards are narrow (home page, three across). */
+  showPeriod?: boolean;
 };
 
 const STACK_LIMIT = 3;
 
 /** Cover (or a plain box until it exists), title + badge + period, event line (hackathon/academic), summary and top stack. The whole card links to the project. */
-export function ProjectCard({ project, priority = false }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  priority = false,
+  showPeriod = true,
+}: ProjectCardProps) {
   const { slug, title, period, summary, stack, cover, event, duration, team } =
     project;
 
@@ -55,7 +61,9 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
           {project.status === "in-progress" && <Badge>In progress</Badge>}
           {project.award && <Badge tone="accent">{project.award}</Badge>}
         </div>
-        <p className="shrink-0 font-mono text-xs text-muted">{period}</p>
+        {showPeriod && (
+          <p className="shrink-0 font-mono text-xs text-muted">{period}</p>
+        )}
       </div>
 
       {context.length > 0 && (

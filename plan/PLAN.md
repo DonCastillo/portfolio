@@ -306,8 +306,8 @@ Each milestone ends with a deploy to a preview URL.
 - [x] Add MDX files for media pipeline, CMS migration and MarkBound
 
 ### M5: Home (≈ 3 hrs)
-- [ ] `Hero`, `ImpactStrip`, featured cards, `ExperienceList`, `Education`, `ClosingCta`
-- [ ] `data/experience.ts`, `data/education.ts`
+- [x] `Hero`, `ImpactStrip`, featured cards, `ExperienceList`, `Education`, `ClosingCta`
+- [x] `data/experience.ts`, `data/education.ts`
 
 ### M6: Contact (≈ 2 hrs)
 - [ ] `ContactForm` + `public/__forms.html` + honeypot
