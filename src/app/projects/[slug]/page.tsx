@@ -1,8 +1,13 @@
 import { notFound } from "next/navigation";
 import { DemoVideo } from "@/components/project/DemoVideo";
+import { Gallery } from "@/components/project/Gallery";
+import { Highlights } from "@/components/project/Highlights";
+import { Metrics } from "@/components/project/Metrics";
+import { NextProject } from "@/components/project/NextProject";
 import { ProjectHeader } from "@/components/project/ProjectHeader";
 import { ProjectLinks } from "@/components/project/ProjectLinks";
-import { getProject } from "@/lib/projects";
+import { StackTags } from "@/components/project/StackTags";
+import { getNext, getProject } from "@/lib/projects";
 
 // Placeholder until the generateStaticParams task in M3: slugs will come from getProjects().
 const slugs = ["gac-paq"];
@@ -25,6 +30,11 @@ export default async function ProjectPage({
       {project.links.demo && (
         <DemoVideo url={project.links.demo} title={project.title} />
       )}
+      {project.metrics && <Metrics metrics={project.metrics} />}
+      <Highlights highlights={project.highlights} />
+      <StackTags stack={project.stack} />
+      <Gallery gallery={project.gallery} />
+      <NextProject next={getNext(project.slug)} />
     </article>
   );
 }
