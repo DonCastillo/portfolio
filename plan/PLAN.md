@@ -30,7 +30,7 @@ This file is the source of truth for scope, architecture and build order. Update
 | Fonts | Geist + Geist Mono via `next/font/google` | Self-hosted at build, no layout shift |
 | Forms | Netlify Forms | No backend; spam filtering included |
 | Hosting | Netlify + custom domain (e.g. `doncastillo.dev`) | Existing CI/CD experience |
-| Analytics | Plausible or Netlify Analytics | Privacy-friendly; see which projects recruiters open |
+| Analytics | Google Analytics 4 via `@next/third-parties` | Free; see which projects recruiters open. Loads after hydration, only when `NEXT_PUBLIC_GA_ID` is set |
 | Testing | Playwright (smoke), Lighthouse CI | Cheap, credible quality signals |
 
 ---
@@ -315,7 +315,7 @@ Each milestone ends with a deploy to a preview URL.
 
 ### M7: SEO, analytics, polish (≈ 3 hrs)
 - [x] OG images, sitemap, robots, JSON-LD
-- [ ] Analytics script
+- [x] Analytics script
 - [ ] Accessibility pass (keyboard only, screen reader spot check, axe)
 - [ ] Playwright smoke tests + Lighthouse CI added to the workflow
 
@@ -365,7 +365,7 @@ Each milestone ends with a deploy to a preview URL.
 | # | Decision | Default if not decided |
 |---|---|---|
 | 1 | Domain name | `doncastillo.dev` |
-| 2 | Plausible (paid, nicer) vs Netlify Analytics | Netlify Analytics |
+| 2 | Analytics provider | **Decided:** Google Analytics 4 (free). No cookie banner; a note on the contact page says GA is used |
 | 3 | Demo video host | YouTube unlisted |
 | 7 | Move images to Cloudinary later | Optional: swap `ProjectImage` to a Cloudinary loader; content paths stay the same shape |
 | 4 | Dark mode in v1 or later | Later |

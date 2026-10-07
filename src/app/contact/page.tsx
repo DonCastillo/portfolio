@@ -52,6 +52,10 @@ export default function ContactPage() {
             ))}
           </ul>
           <p className="mt-5 text-sm text-muted">{site.location}</p>
+          <p className="mt-8 text-[13px] leading-relaxed text-muted">
+            This site uses Google Analytics to count visits and see which pages
+            are read. It doesn&apos;t collect anything you type in the form.
+          </p>
         </aside>
       </div>
     </>

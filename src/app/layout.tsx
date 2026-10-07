@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { MobileNav } from "@/components/layout/MobileNav";
@@ -5,6 +6,9 @@ import { Sidebar } from "@/components/layout/Sidebar";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { site } from "@/data/site";
 import "./globals.css";
+
+// Set only in Netlify's production environment, so dev and preview builds don't send stats.
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
 const geist = Geist({
   variable: "--font-geist",
@@ -49,6 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </main>
         </div>
       </body>
+      {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   );
 }
