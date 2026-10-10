@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { nav, site } from "@/data/site";
+import { site } from "@/data/site";
 import { ExternalLinks } from "./ExternalLinks";
-import { NavLink } from "./NavLink";
+import { NavList } from "./NavList";
 
 /** Fixed left sidebar, desktop only (lg and up). */
 export function Sidebar() {
@@ -18,13 +18,7 @@ export function Sidebar() {
         </Link>
 
         <nav aria-label="Main" className="mt-10">
-          <ul className="space-y-1">
-            {nav.map((item, i) => (
-              <li key={item.href}>
-                <NavLink {...item} index={i} />
-              </li>
-            ))}
-          </ul>
+          <NavList />
         </nav>
       </div>
 

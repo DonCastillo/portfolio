@@ -4,7 +4,7 @@ import { intro, site } from "@/data/site";
 /** Eyebrow, name, intro and the two calls to action. */
 export function Hero() {
   return (
-    <section aria-labelledby="hero">
+    <section id="about" aria-labelledby="about-heading">
       <p className="font-mono text-xs tracking-wide text-subtle uppercase md:text-[13px]">
         {site.title}
         {/* Two lines on mobile, one line with a separator from sm up. */}
@@ -14,7 +14,7 @@ export function Hero() {
         <span className="block sm:inline">{site.location}</span>
       </p>
       <h1
-        id="hero"
+        id="about-heading"
         className="mt-4 text-[2.75rem] leading-none font-semibold tracking-tight text-ink md:text-hero"
       >
         {site.name}
@@ -26,7 +26,7 @@ export function Hero() {
         <ButtonLink href={site.links.resume} download>
           Download resume
         </ButtonLink>
-        <ButtonLink href="/contact" variant="secondary">
+        <ButtonLink href="#contact" variant="secondary">
           Get in touch
         </ButtonLink>
       </div>

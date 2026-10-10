@@ -29,3 +29,9 @@
   for = "/projects/*/opengraph-image"
   [headers.values]
     Content-Type = "image/png"
+
+# The contact page moved into the home page.
+[[redirects]]
+  from = "/contact"
+  to = "/#contact"
+  status = 301

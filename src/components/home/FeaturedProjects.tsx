@@ -17,10 +17,10 @@ export function FeaturedProjects() {
   );
 
   return (
-    <section aria-labelledby="featured" className="mt-20">
+    <section id="projects" aria-labelledby="projects-heading" className="mt-20">
       <div className="flex items-baseline justify-between gap-4">
         <h2
-          id="featured"
+          id="projects-heading"
           className="text-2xl font-semibold tracking-tight text-ink"
         >
           Featured projects

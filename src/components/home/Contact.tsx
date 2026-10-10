@@ -1,12 +1,5 @@
-import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { site } from "@/data/site";
-
-export const metadata: Metadata = {
-  title: "Contact",
-  description: `Get in touch with ${site.name}, ${site.title}.`,
-  alternates: { canonical: "/contact" },
-};
 
 const elsewhere = [
   { href: site.links.linkedin, label: "LinkedIn" },
@@ -14,27 +7,31 @@ const elsewhere = [
   { href: site.links.credly, label: "Credly" },
 ];
 
-export default function ContactPage() {
+/** Last section on the home page: the contact form, with links elsewhere. */
+export function Contact() {
   return (
-    <>
-      <h1 className="text-[2.5rem] leading-tight font-semibold tracking-tight text-ink md:text-display">
+    <section id="contact" aria-labelledby="contact-heading" className="mt-20">
+      <h2
+        id="contact-heading"
+        className="text-2xl font-semibold tracking-tight text-ink"
+      >
         Contact
-      </h1>
-      <p className="mt-5 max-w-150 text-lg leading-relaxed md:text-xl">
+      </h2>
+      <p className="mt-3 max-w-150 text-lg leading-relaxed">
         Open to full stack and frontend roles in Calgary or remote. Send a note
         and I&apos;ll reply within two business days.
       </p>
 
-      <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1fr)_16rem]">
+      <div className="mt-8 grid gap-12 lg:grid-cols-[minmax(0,1fr)_16rem]">
         <ContactForm />
 
         <aside aria-labelledby="elsewhere">
-          <h2
+          <h3
             id="elsewhere"
             className="font-mono text-xs tracking-wide text-subtle uppercase"
           >
             Elsewhere
-          </h2>
+          </h3>
           <ul className="mt-3">
             {elsewhere.map(({ href, label }) => (
               <li key={href} className="border-b border-border">
@@ -58,6 +55,6 @@ export default function ContactPage() {
           </p>
         </aside>
       </div>
-    </>
+    </section>
   );
 }

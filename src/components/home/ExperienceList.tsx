@@ -3,9 +3,13 @@ import { experience } from "@/data/experience";
 /** One row per role: dates, role · company, and a one-line summary. */
 export function ExperienceList() {
   return (
-    <section aria-labelledby="experience" className="mt-20">
+    <section
+      id="experience"
+      aria-labelledby="experience-heading"
+      className="mt-20"
+    >
       <h2
-        id="experience"
+        id="experience-heading"
         className="text-2xl font-semibold tracking-tight text-ink"
       >
         Experience

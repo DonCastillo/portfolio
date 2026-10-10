@@ -316,7 +316,7 @@ Each milestone ends with a deploy to a preview URL.
 ### M7: SEO, analytics, polish (≈ 3 hrs)
 - [x] OG images, sitemap, robots, JSON-LD
 - [x] Analytics script
-- [ ] Accessibility pass (keyboard only, screen reader spot check, axe)
+- [x] Accessibility pass (keyboard only, screen reader spot check, axe)
 - [ ] Playwright smoke tests + Lighthouse CI added to the workflow
 
 ### M8: Content and launch (≈ 3 hrs + content time)

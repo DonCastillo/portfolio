@@ -11,11 +11,16 @@ export const site = {
   },
 } as const;
 
+/** Anchors to the home page sections; each `id` matches a section's id. */
 export const nav = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { id: "about", label: "About me" },
+  { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
+  { id: "education", label: "Education & certifications" },
+  { id: "contact", label: "Contact" },
 ] as const;
+
+export type SectionId = (typeof nav)[number]["id"];
 
 export const externalLinks = [
   { href: site.links.github, label: "GitHub" },

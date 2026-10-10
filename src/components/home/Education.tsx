@@ -3,9 +3,13 @@ import { certifications, education } from "@/data/education";
 /** Degrees side by side, then one line about certifications linking to Credly. */
 export function Education() {
   return (
-    <section aria-labelledby="education" className="mt-20">
+    <section
+      id="education"
+      aria-labelledby="education-heading"
+      className="mt-20"
+    >
       <h2
-        id="education"
+        id="education-heading"
         className="text-2xl font-semibold tracking-tight text-ink"
       >
         Education &amp; certifications

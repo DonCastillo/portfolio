@@ -40,6 +40,17 @@
 }
 
 @layer base {
+  /* Section links land below the sticky mobile header (h-14), with room above. */
+  html {
+    @apply scroll-pt-20 lg:scroll-pt-12;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   body {
     @apply bg-bg font-sans text-body antialiased;
   }

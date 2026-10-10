@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { nav, site } from "@/data/site";
+import { site } from "@/data/site";
 import { ExternalLinks } from "./ExternalLinks";
-import { NavLink } from "./NavLink";
+import { NavList } from "./NavList";
 
 /** Top bar with a menu button, below lg. */
 export function MobileNav() {
@@ -66,13 +66,8 @@ export function MobileNav() {
         className="fixed inset-x-0 top-14 bottom-0 overflow-y-auto bg-bg px-3 pt-4 pb-10"
       >
         <nav aria-label="Main">
-          <ul className="space-y-1">
-            {nav.map((item, i) => (
-              <li key={item.href}>
-                <NavLink {...item} index={i} />
-              </li>
-            ))}
-          </ul>
+          {/* Section links don't change the path, so close the menu on click. */}
+          <NavList onNavigate={() => setOpenOn(null)} />
         </nav>
         <div className="mt-8 border-t border-border px-3 pt-6">
           <ExternalLinks />

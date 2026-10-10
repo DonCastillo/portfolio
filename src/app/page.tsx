@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ClosingCta } from "@/components/home/ClosingCta";
+import { Contact } from "@/components/home/Contact";
 import { Education } from "@/components/home/Education";
 import { ExperienceList } from "@/components/home/ExperienceList";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
@@ -23,7 +23,7 @@ export default function Home() {
       <FeaturedProjects />
       <ExperienceList />
       <Education />
-      <ClosingCta />
+      <Contact />
     </>
   );
 }

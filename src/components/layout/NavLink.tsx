@@ -1,24 +1,19 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 type NavLinkProps = {
   href: string;
   label: string;
   index: number;
+  active: boolean;
+  onClick?: () => void;
 };
 
-/** Active on its own path, and on nested paths ("/projects" stays active on "/projects/gac-paq"). */
-export function NavLink({ href, label, index }: NavLinkProps) {
-  const pathname = usePathname();
-  const exact = pathname === href;
-  const active = exact || (href !== "/" && pathname.startsWith(`${href}/`));
-
+export function NavLink({ href, label, index, active, onClick }: NavLinkProps) {
   return (
     <Link
       href={href}
-      aria-current={exact ? "page" : active ? "true" : undefined}
+      onClick={onClick}
+      aria-current={active ? "true" : undefined}
       className={`flex min-h-11 items-center gap-3 rounded-md px-3 text-[15px] ${
         active
           ? "bg-surface font-medium text-accent"
