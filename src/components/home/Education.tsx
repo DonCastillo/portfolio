@@ -1,6 +1,6 @@
 import { certifications, education } from "@/data/education";
 
-/** Degrees side by side, then one line about certifications linking to Credly. */
+/** One row per degree, laid out like Experience (year, degree, school · honours), then a line about certifications. */
 export function Education() {
   return (
     <section
@@ -14,17 +14,24 @@ export function Education() {
       >
         Education &amp; certifications
       </h2>
-      <ul className="mt-6 grid gap-6 md:grid-cols-2">
+      <ol className="mt-6 border-b border-border">
         {education.map(({ degree, school, honours, year }) => (
-          <li key={degree}>
-            <h3 className="text-base font-semibold text-ink">{degree}</h3>
-            <p className="mt-1 text-sm text-body">
-              {school} · {honours}
+          <li
+            key={degree}
+            className="grid gap-1 border-t border-border py-5 md:grid-cols-[10rem_1fr] md:gap-6"
+          >
+            <p className="font-mono text-xs text-muted uppercase md:pt-1 md:text-[13px] md:normal-case">
+              {year}
             </p>
-            <p className="mt-1 font-mono text-xs text-muted">{year}</p>
+            <div>
+              <h3 className="text-base font-semibold text-ink">{degree}</h3>
+              <p className="mt-1 text-[15px] text-body">
+                {school} · {honours}
+              </p>
+            </div>
           </li>
         ))}
-      </ul>
+      </ol>
       <p className="mt-6 text-[15px] text-ink-2">
         {certifications.summary}{" "}
         <a
