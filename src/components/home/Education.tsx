@@ -10,16 +10,14 @@ export function Education() {
     >
       <h2
         id="education-heading"
-        className="font-heading text-2xl font-semibold tracking-tight text-ink"
+        className="text-2xl font-semibold tracking-tight text-ink"
       >
         Education &amp; certifications
       </h2>
       <ul className="mt-6 grid gap-6 md:grid-cols-2">
         {education.map(({ degree, school, honours, year }) => (
           <li key={degree}>
-            <h3 className="font-heading text-base font-semibold text-ink">
-              {degree}
-            </h3>
+            <h3 className="text-base font-semibold text-ink">{degree}</h3>
             <p className="mt-1 text-sm text-body">
               {school} · {honours}
             </p>

@@ -13,7 +13,7 @@ export function Contact() {
     <section id="contact" aria-labelledby="contact-heading" className="mt-20">
       <h2
         id="contact-heading"
-        className="font-heading text-2xl font-semibold tracking-tight text-ink"
+        className="text-2xl font-semibold tracking-tight text-ink"
       >
         Contact
       </h2>
@@ -34,12 +34,12 @@ export function Contact() {
           </h3>
           <ul className="mt-3">
             {elsewhere.map(({ href, label }) => (
-              <li key={href} className="border-b border-border">
+              <li key={href}>
                 <a
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex min-h-14 items-center justify-between text-[15px] text-ink hover:text-accent"
+                  className="flex min-h-11 items-center justify-between text-[15px] text-ink hover:text-accent"
                 >
                   {label}
                   <span aria-hidden>↗</span>
@@ -49,7 +49,7 @@ export function Contact() {
             ))}
           </ul>
           <p className="mt-5 text-sm text-muted">{site.location}</p>
-          <p className="mt-8 text-[13px] leading-relaxed text-muted">
+          <p className="mt-8 text-sm leading-relaxed text-muted">
             This site uses Google Analytics to count visits and see which pages
             are read. It doesn&apos;t collect anything you type in the form.
           </p>

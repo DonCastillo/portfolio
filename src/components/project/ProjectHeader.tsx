@@ -32,7 +32,7 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
       </Link>
 
       <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-        <h1 className="font-heading text-[2.5rem] leading-tight font-semibold tracking-tight text-ink md:text-display">
+        <h1 className="text-[2.5rem] leading-tight font-semibold tracking-tight text-ink md:text-display">
           {title}
         </h1>
         {project.status === "in-progress" && <Badge>In progress</Badge>}

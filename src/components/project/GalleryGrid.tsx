@@ -37,7 +37,7 @@ export function GalleryGrid({ items }: GalleryGridProps) {
           <ProjectImage src={item.src} alt={item.alt} kind={item.kind} />
         </button>
         {item.caption && (
-          <figcaption className="mt-2 text-[13px] text-muted">
+          <figcaption className="mt-2 text-sm text-muted">
             {item.caption}
           </figcaption>
         )}

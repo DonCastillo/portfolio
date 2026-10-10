@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { ProjectImage } from "@/components/ui/ProjectImage";
+import { StackList } from "@/components/ui/StackList";
 import { imageExists } from "@/lib/images";
 import type { Project } from "@/lib/projects";
 
@@ -39,17 +40,21 @@ export function ProjectCard({
             src={cover.src}
             alt={cover.alt}
             kind="cover"
+            fit={cover.kind === "mobile" ? "contain" : "cover"}
             priority={priority}
           />
         ) : (
           // Cover not in public/ yet: a plain box keeps cards in a row the same shape.
-          <div aria-hidden className="aspect-16/10 rounded-lg bg-placeholder" />
+          <div
+            aria-hidden
+            className="aspect-16/10 rounded-lg border border-border bg-placeholder"
+          />
         )}
       </div>
 
       <div className="flex items-baseline justify-between gap-4">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <h3 className="font-heading text-lg font-semibold tracking-tight text-ink">
+          <h3 className="text-lg font-semibold tracking-tight text-ink">
             {/* Stretched link: the ::after covers the card, so the card is clickable but only the title is announced. */}
             <Link
               href={`/projects/${slug}`}
@@ -74,10 +79,11 @@ export function ProjectCard({
 
       <p className="mt-2 text-[15px] leading-relaxed text-body">{summary}</p>
 
-      <p className="mt-3 font-mono text-xs text-muted">
-        <span className="sr-only">Stack: </span>
-        {stack.slice(0, STACK_LIMIT).join(" · ")}
-      </p>
+      <StackList
+        items={stack.slice(0, STACK_LIMIT)}
+        label="Stack: "
+        className="mt-3"
+      />
     </article>
   );
 }

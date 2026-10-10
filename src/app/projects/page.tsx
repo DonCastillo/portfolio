@@ -19,7 +19,7 @@ export default function ProjectsPage() {
         <p className="font-mono text-xs tracking-wide text-subtle uppercase">
           {projects.length} {projects.length === 1 ? "project" : "projects"}
         </p>
-        <h1 className="mt-4 font-heading text-[2.5rem] leading-tight font-semibold tracking-tight text-ink md:text-display">
+        <h1 className="mt-4 text-[2.5rem] leading-tight font-semibold tracking-tight text-ink md:text-display">
           Projects
         </h1>
         <p className="mt-5 max-w-150 text-lg leading-relaxed">
@@ -36,7 +36,7 @@ export default function ProjectsPage() {
         >
           <h2
             id={`group-${category}`}
-            className="flex items-baseline gap-3 border-b border-border pb-3 font-heading text-[22px] font-semibold tracking-tight text-ink"
+            className="flex items-baseline gap-3 text-[22px] font-semibold tracking-tight text-ink"
           >
             {label}
             <span className="font-mono text-xs font-normal text-subtle">

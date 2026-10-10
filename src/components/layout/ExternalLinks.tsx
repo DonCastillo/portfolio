@@ -3,7 +3,7 @@ import { externalLinks, site } from "@/data/site";
 /** GitHub · LinkedIn · Credly · Resume, shown at the bottom of the sidebar and the mobile menu. */
 export function ExternalLinks() {
   return (
-    <ul className="font-mono text-[13px] text-ink-2">
+    <ul className="text-sm text-ink-2">
       {externalLinks.map(({ href, label }) => (
         <li key={href}>
           <a

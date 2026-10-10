@@ -11,6 +11,8 @@ type ProjectImageProps = {
   src: string;
   alt: string;
   kind: ImageKind;
+  /** "contain" shows the whole image centred on the placeholder colour (phone screenshots in a 16:10 cover). */
+  fit?: "cover" | "contain";
   priority?: boolean;
 };
 
@@ -19,20 +21,26 @@ export function ProjectImage({
   src,
   alt,
   kind,
+  fit = "cover",
   priority = false,
 }: ProjectImageProps) {
   const { aspect, width, height } = shapes[kind];
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element -- static export; images are pre-optimized by `pnpm images`
-    <img
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      loading={priority ? "eager" : "lazy"}
-      decoding="async"
-      className={`${aspect} w-full rounded-lg bg-placeholder object-cover`}
-    />
+    // Same frame for every project image: fixed shape, radius and 1px border.
+    <span
+      className={`block ${aspect} overflow-hidden rounded-lg border border-border bg-placeholder`}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element -- static export; images are pre-optimized by `pnpm images` */}
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        className={`size-full ${fit === "contain" ? "object-contain p-4" : "object-cover"}`}
+      />
+    </span>
   );
 }

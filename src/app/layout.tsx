@@ -1,6 +1,6 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Google_Sans_Code } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { SkipLink } from "@/components/layout/SkipLink";
@@ -17,12 +17,6 @@ const geist = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-// Headings only (font-heading); an experiment, see --font-heading in globals.css.
-const googleSansCode = Google_Sans_Code({
-  variable: "--font-google-sans-code",
   subsets: ["latin"],
 });
 
@@ -44,10 +38,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geist.variable} ${geistMono.variable} ${googleSansCode.variable}`}
-    >
+    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
       <body>
         <SkipLink />
         <Sidebar />
@@ -56,7 +47,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main
             id="main"
             tabIndex={-1}
-            className="max-w-252 px-5 py-12 outline-none lg:px-16 lg:py-22"
+            // box-content: the 760px cap is the text column, not including padding.
+            className="mx-auto box-content max-w-190 px-5 py-12 outline-none lg:px-16 lg:py-22"
           >
             {children}
           </main>

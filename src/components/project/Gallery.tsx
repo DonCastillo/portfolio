@@ -17,7 +17,7 @@ export function Gallery({ gallery }: GalleryProps) {
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h2
           id="gallery"
-          className="font-heading text-[22px] font-semibold tracking-tight text-ink"
+          className="text-[22px] font-semibold tracking-tight text-ink"
         >
           Gallery
         </h2>

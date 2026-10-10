@@ -14,8 +14,8 @@ export const site = {
 /** Anchors to the home page sections; each `id` matches a section's id. */
 export const nav = [
   { id: "about", label: "About me" },
-  { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
   { id: "education", label: "Education & certifications" },
   { id: "contact", label: "Contact" },

@@ -48,7 +48,13 @@ const projects = defineCollection({
     highlights: s.array(s.string()).min(2).max(5),
     stack: s.array(s.string()).min(1),
 
-    cover: s.object({ src: s.string(), alt: s.string() }), // path in public/, e.g. "/projects/gac-paq/cover.webp"
+    // src is a path in public/, e.g. "/projects/gac-paq/cover.webp".
+    // kind "mobile": a phone screenshot, shown whole and centred instead of cropped.
+    cover: s.object({
+      src: s.string(),
+      alt: s.string(),
+      kind: s.enum(["mobile", "desktop"]).default("desktop"),
+    }),
     gallery: s
       .array(
         s.object({

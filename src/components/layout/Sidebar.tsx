@@ -12,7 +12,7 @@ export function Sidebar() {
           <span className="block text-[17px] font-semibold text-ink">
             {site.name}
           </span>
-          <span className="mt-1 block text-[13px] leading-snug text-muted">
+          <span className="mt-1 block text-sm leading-snug text-muted">
             {site.title}
           </span>
         </Link>

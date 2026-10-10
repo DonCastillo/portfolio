@@ -10,7 +10,7 @@ export function NextProject({ next }: NextProjectProps) {
   return (
     <nav
       aria-label="More projects"
-      className="mt-16 flex flex-wrap items-end justify-between gap-6 border-t border-border pt-8"
+      className="mt-20 flex flex-wrap items-end justify-between gap-6"
     >
       <Link
         href="/projects"

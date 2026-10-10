@@ -21,8 +21,8 @@ export default function Home() {
       />
       <Hero />
       <ImpactStrip />
-      <Skills />
       <FeaturedProjects />
+      <Skills />
       <ExperienceList />
       <Education />
       <Contact />

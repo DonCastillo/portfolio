@@ -69,7 +69,7 @@ export function MobileNav() {
           {/* Section links don't change the path, so close the menu on click. */}
           <NavList onNavigate={() => setOpenOn(null)} />
         </nav>
-        <div className="mt-8 border-t border-border px-3 pt-6">
+        <div className="mt-10 px-3">
           <ExternalLinks />
         </div>
       </div>

@@ -102,7 +102,7 @@ export function ContactForm() {
         >
           {status === "sending" ? "Sending…" : "Send message"}
         </button>
-        <p className="text-[13px] text-muted">
+        <p className="text-sm text-muted">
           Protected from spam. Your details are only used to reply.
         </p>
       </div>
