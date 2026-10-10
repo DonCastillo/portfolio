@@ -5,6 +5,7 @@ import { ExperienceList } from "@/components/home/ExperienceList";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { Hero } from "@/components/home/Hero";
 import { ImpactStrip } from "@/components/home/ImpactStrip";
+import { Skills } from "@/components/home/Skills";
 import { jsonLd, personJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function Home() {
       />
       <Hero />
       <ImpactStrip />
+      <Skills />
       <FeaturedProjects />
       <ExperienceList />
       <Education />
