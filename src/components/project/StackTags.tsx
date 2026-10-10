@@ -8,7 +8,7 @@ export function StackTags({ stack }: StackTagsProps) {
     <section aria-labelledby="stack" className="mt-12">
       <h2
         id="stack"
-        className="text-[22px] font-semibold tracking-tight text-ink"
+        className="font-heading text-[22px] font-semibold tracking-tight text-ink"
       >
         Tech stack
       </h2>

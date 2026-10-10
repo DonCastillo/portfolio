@@ -21,7 +21,7 @@ export function FeaturedProjects() {
       <div className="flex items-baseline justify-between gap-4">
         <h2
           id="projects-heading"
-          className="text-2xl font-semibold tracking-tight text-ink"
+          className="font-heading text-2xl font-semibold tracking-tight text-ink"
         >
           Featured projects
         </h2>

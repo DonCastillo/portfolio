@@ -13,7 +13,7 @@ export function Contact() {
     <section id="contact" aria-labelledby="contact-heading" className="mt-20">
       <h2
         id="contact-heading"
-        className="text-2xl font-semibold tracking-tight text-ink"
+        className="font-heading text-2xl font-semibold tracking-tight text-ink"
       >
         Contact
       </h2>

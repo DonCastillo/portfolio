@@ -15,7 +15,7 @@ export function Hero() {
       </p>
       <h1
         id="about-heading"
-        className="mt-4 text-[2.75rem] leading-none font-semibold tracking-tight text-ink md:text-hero"
+        className="mt-4 font-heading text-[2.75rem] leading-none font-semibold tracking-tight text-ink md:text-hero"
       >
         {site.name}
       </h1>

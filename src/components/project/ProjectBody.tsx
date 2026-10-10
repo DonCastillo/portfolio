@@ -13,12 +13,15 @@ function mdxContent(code: string): MdxContent {
 const components = {
   h2: (props: ComponentProps<"h2">) => (
     <h2
-      className="mt-10 text-[22px] font-semibold tracking-tight text-ink first:mt-0"
+      className="mt-10 font-heading text-[22px] font-semibold tracking-tight text-ink first:mt-0"
       {...props}
     />
   ),
   h3: (props: ComponentProps<"h3">) => (
-    <h3 className="mt-8 text-lg font-semibold text-ink" {...props} />
+    <h3
+      className="mt-8 font-heading text-lg font-semibold text-ink"
+      {...props}
+    />
   ),
   p: (props: ComponentProps<"p">) => <p className="mt-4" {...props} />,
   ul: (props: ComponentProps<"ul">) => (

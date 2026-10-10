@@ -49,7 +49,7 @@ export function ProjectCard({
 
       <div className="flex items-baseline justify-between gap-4">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <h3 className="text-lg font-semibold tracking-tight text-ink">
+          <h3 className="font-heading text-lg font-semibold tracking-tight text-ink">
             {/* Stretched link: the ::after covers the card, so the card is clickable but only the title is announced. */}
             <Link
               href={`/projects/${slug}`}

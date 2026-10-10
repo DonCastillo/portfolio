@@ -1,6 +1,6 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Google_Sans_Code } from "next/font/google";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { SkipLink } from "@/components/layout/SkipLink";
@@ -17,6 +17,12 @@ const geist = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+// Headings only (font-heading); an experiment, see --font-heading in globals.css.
+const googleSansCode = Google_Sans_Code({
+  variable: "--font-google-sans-code",
   subsets: ["latin"],
 });
 
@@ -38,7 +44,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${geist.variable} ${geistMono.variable} ${googleSansCode.variable}`}
+    >
       <body>
         <SkipLink />
         <Sidebar />

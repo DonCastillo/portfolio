@@ -37,6 +37,8 @@
 @theme inline {
   --font-sans: var(--font-geist), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  /* Headings. To undo the experiment, point this back at var(--font-sans). */
+  --font-heading: var(--font-google-sans-code), ui-monospace, monospace;
 }
 
 @layer base {

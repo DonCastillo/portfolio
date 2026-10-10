@@ -10,7 +10,7 @@ export function ExperienceList() {
     >
       <h2
         id="experience-heading"
-        className="text-2xl font-semibold tracking-tight text-ink"
+        className="font-heading text-2xl font-semibold tracking-tight text-ink"
       >
         Experience
       </h2>
@@ -24,7 +24,7 @@ export function ExperienceList() {
               {period}
             </p>
             <div>
-              <h3 className="text-base font-semibold text-ink">
+              <h3 className="font-heading text-base font-semibold text-ink">
                 {role} · {company}
               </h3>
               <p className="mt-1 hidden text-sm text-body md:block">
