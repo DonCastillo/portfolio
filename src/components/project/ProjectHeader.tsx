@@ -6,7 +6,7 @@ type ProjectHeaderProps = {
   project: Project;
 };
 
-/** Back link with the category eyebrow opposite, title, summary and the mono meta list (role, client/event, award, team, period), one per line. */
+/** Back link, then the category eyebrow above the title, summary and the mono meta list (role, client/event, award, team, period), one per line. */
 export function ProjectHeader({ project }: ProjectHeaderProps) {
   const { title, summary, role, client, event, award, period, duration, team } =
     project;
@@ -28,19 +28,19 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
 
   return (
     <header id="overview">
-      <div className="flex items-center justify-between gap-4">
-        <Link
-          href="/projects"
-          className="inline-flex min-h-11 items-center gap-1.5 text-sm text-ink-2 hover:text-accent"
-        >
-          <span aria-hidden>←</span> All projects
-        </Link>
-        <p className="font-mono text-xs tracking-wide text-subtle uppercase">
-          {categoryName(project.category)}
-        </p>
-      </div>
+      <Link
+        href="/projects"
+        className="inline-flex min-h-11 items-center gap-1.5 text-sm text-ink-2 hover:text-accent"
+      >
+        <span aria-hidden>←</span> All projects
+      </Link>
 
-      <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+      {/* Wide gap after the back link; the eyebrow sits tight above the title it labels. */}
+      <p className="mt-10 font-mono text-xs tracking-wide text-subtle uppercase md:mt-12">
+        {categoryName(project.category)}
+      </p>
+
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
         <h1 className="text-[2.5rem] leading-tight font-semibold tracking-tight text-ink md:text-display">
           {title}
         </h1>
