@@ -1,0 +1,67 @@
+---
+title: The Unexpected Visitor
+slug: alien-invasion
+category: academic
+summary: A one-minute, multi-scene animation in Processing that follows a UFO from deep space to a farm on Earth, timed scene by scene with my own vector art and sound.
+problem: >-
+  The brief started from Paul Klee's idea of "a dot that went for a walk": an
+  animation of at least four timed scenes, under a minute long, that uses
+  movement, pacing and composition to change how we see its objects.
+solution: >-
+  An animation that zooms from the scale of space down to a single farmhouse. A
+  UFO dodges asteroids, crosses in front of the Earth, beams over a city
+  skyline, and lands in a field, where its aliens walk off toward a barn. Each
+  scene is timed to the second, with sound effects to match.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Developer and designer
+client: University of Lethbridge
+event: NMED 3380 · Programming for Artists
+team: { size: 1, role: Solo developer }
+period: "Oct 2020"
+status: shipped
+
+links:
+  github: https://github.com/DonCastillo/alien_invasion_animation
+
+highlights:
+  - Storyboarded all seven scenes by hand first, noting when each element enters and leaves, then built them to that timing with Processing's millis().
+  - Drew the vector art myself, including the alien with its walk-cycle frames and the spaceship, and layered it over photo backgrounds.
+  - Modelled the moving objects with a base class and subclasses for the alien, spaceship and asteroids, so each shares position and movement but animates its own way.
+  - Synced sound effects to the action, from the spaceship's hum to the landing, the door and the footsteps.
+
+stack:
+  - label: Language
+    items: [Processing, Java]
+  - label: Techniques
+    items: [Timed scenes, Sprite animation, Object-oriented design, Audio]
+
+cover:
+  src: /projects/alien-invasion/cover.webp
+  alt: A cartoon UFO flying in front of the Earth against a starry sky
+
+gallery:
+  - src: /projects/alien-invasion/desktop/1.webp
+    alt: The UFO flying through a field of stars past an asteroid
+    caption: Through space
+    kind: desktop
+  - src: /projects/alien-invasion/desktop/2.webp
+    alt: The UFO shining a beam down onto a city skyline at night beside the moon
+    caption: Over the city
+    kind: desktop
+  - src: /projects/alien-invasion/desktop/3.webp
+    alt: The UFO hovering over a field at night, beaming two green aliens down beside an old farmhouse
+    caption: The landing
+    kind: desktop
+  - src: /projects/alien-invasion/desktop/4.webp
+    alt: An alien peeking out from behind a cartoon barn at night
+    caption: The barn
+    kind: desktop
+  - src: /projects/alien-invasion/desktop/5.webp
+    alt: Hand-drawn storyboard of UFOs beaming over city towers, with timing notes in seconds
+    caption: Storyboard for the city scene
+    kind: desktop
+
+featured: false
+order: 28
+---

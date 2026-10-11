@@ -1,0 +1,66 @@
+---
+title: Evolution of Dystopian Fiction
+slug: dystopian-fiction-evolution
+category: academic
+summary: An interactive timeline of dystopian fiction from the 1900s to the 2010s, showing how the real events of each era shaped the stories people told.
+problem: >-
+  Dystopian fiction tracks the fears of its time, from fascism in 1984 to
+  surveillance and conformity in The Hunger Games, but that link between real
+  history and fiction is hard to see when the books are read one at a time.
+solution: >-
+  A single scrolling page that defines six common dystopian themes, then walks
+  through five eras. Each era pairs the real events of the period with the books
+  it produced, and every book is tagged with the themes it explores.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Developer and designer
+client: University of Lethbridge
+event: NMED 4520 · Information Design
+team: { size: 1, role: Solo developer }
+period: "Mar 2023"
+status: shipped
+
+links:
+  live: https://doncastillo.github.io/dystopian-fiction-evolution/
+  github: https://github.com/DonCastillo/dystopian-fiction-evolution
+
+metrics:
+  - { value: "5", label: "eras, from the 1900s to the 2010s" }
+  - { value: "23", label: "books and their authors" }
+  - { value: "6", label: "dystopian themes" }
+
+highlights:
+  - Researched dystopian fiction across five eras, from the genre's start in the 1900s to the young-adult wave of the 2010s, and linked each era's themes to its real events, such as World War II, the Moon landing and HIV/AIDS.
+  - Designed an icon for each of six themes, from oppressive government to cyberpunk, and tagged every book with the themes it explores, so the shift between eras shows up as a change in icons.
+  - Built the timeline from JSON with jQuery, rendering each era's title screen, story, notable events and book cards from the data.
+  - Added scroll-triggered animation with the AOS library, and credited every image and source on a separate page.
+
+stack:
+  - label: Frontend
+    items: [HTML, CSS, JavaScript, jQuery]
+  - label: Motion & data
+    items: [AOS, JSON]
+  - label: Hosting
+    items: [GitHub Pages]
+
+cover:
+  src: /projects/dystopian-fiction-evolution/cover.webp
+  alt: Title screen reading "Evolution of Dystopian Fiction, how real events influence dystopian themes" over a still from the film Metropolis
+
+gallery:
+  - src: /projects/dystopian-fiction-evolution/desktop/1.webp
+    alt: Six common dystopian themes, each with a coloured icon and a short definition, from Oppressive Government to Biological Issues
+    caption: Six dystopian themes
+    kind: desktop
+  - src: /projects/dystopian-fiction-evolution/desktop/2.webp
+    alt: Era title screen reading "1930s – 1940s, Loss of Individuality and Rise of Fascism" over a World War II photo
+    caption: An era's title screen
+    kind: desktop
+  - src: /projects/dystopian-fiction-evolution/desktop/3.webp
+    alt: The 1930s–1940s era page with its story, notable events, and book cards for 1984, Brave New World and It Can't Happen Here, each tagged with theme icons
+    caption: Events and books of the 1930s–40s
+    kind: desktop
+
+featured: false
+order: 23
+---

@@ -1,0 +1,73 @@
+---
+title: Vivid
+slug: vivid
+category: academic
+summary: An Android app of two memory games, Arrange the Sequence and Reveal and Match, built with Framework7 and Cordova, with levels that get harder as you go.
+problem: >-
+  The assignment was to design and build a first mobile app: a fully working
+  Android app, with an interface built from Framework7 components, that takes
+  user input and changes what's on screen in response.
+solution: >-
+  Vivid, a collection of quick memory games for when you're bored. In Arrange
+  the Sequence you memorize a row of items, then drag them back into order
+  before time runs out. In Reveal and Match you flip cards to find the pairs.
+  Both get harder level by level.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Developer and designer
+client: University of Lethbridge
+event: NMED 3630 · Mobile Application Development
+team: { size: 1, role: Solo developer }
+period: "Nov 2022"
+status: shipped
+
+links:
+  github: https://github.com/DonCastillo/Vivid
+
+highlights:
+  - Designed the user flow and every screen as a prototype first, from the game picker to the level-complete and level-failed screens, then built the app to match.
+  - Built two games in Framework7 with JavaScript and jQuery, with drag-to-reorder in Arrange the Sequence (SortableJS) and flipping cards in Reveal and Match (jQuery Flip).
+  - Scaled the difficulty level by level, so Arrange the Sequence grows from 3 items to 15, with a longer countdown at each step.
+  - Packaged it with Cordova as an installable Android APK, alongside a browser build.
+
+stack:
+  - label: App
+    items: [Framework7, JavaScript, jQuery, Cordova]
+  - label: Interaction
+    items: [SortableJS, jQuery Flip]
+  - label: Build
+    items: [Vite, Android Studio]
+
+cover:
+  src: /projects/vivid/cover.webp
+  alt: The Vivid logo, four coloured tiles with a plane, a star, a robot and a bicycle above the word VIVID, on a green background
+
+gallery:
+  - src: /projects/vivid/phone/1.webp
+    alt: Home screen with two game tiles, Arrange the Sequence and Reveal and Match
+    caption: Choosing a game
+    kind: mobile
+  - src: /projects/vivid/phone/2.webp
+    alt: Arrange the Sequence level 1, showing three items to memorize and a 15-second time limit
+    caption: Memorize the sequence
+    kind: mobile
+  - src: /projects/vivid/phone/3.webp
+    alt: Arrange the Sequence level 1, with the three items shuffled for the player to reorder
+    caption: Put them back in order
+    kind: mobile
+  - src: /projects/vivid/phone/4.webp
+    alt: Level 1 Completed screen with Exit and Next buttons
+    caption: Level complete
+    kind: mobile
+  - src: /projects/vivid/phone/5.webp
+    alt: Reveal and Match level 1 with four face-down cards and one revealed
+    caption: Reveal the cards
+    kind: mobile
+  - src: /projects/vivid/phone/6.webp
+    alt: Reveal and Match with a matching pair of cards revealed
+    caption: Find the matches
+    kind: mobile
+
+featured: false
+order: 24
+---

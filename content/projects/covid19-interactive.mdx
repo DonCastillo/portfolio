@@ -1,0 +1,67 @@
+---
+title: COVID-19 Interactive Animation
+slug: covid19-interactive
+category: academic
+summary: A seven-scene interactive animation in Processing that explains COVID-19, from where it started to how it spreads, with each scene revealed through the mouse or keyboard.
+problem: >-
+  The final project's theme was COVID-19, and the brief asked for more than a
+  technical exercise: a program that reveals something about the pandemic, or
+  about how we were living through it, in late 2020.
+solution: >-
+  An interactive piece in seven scenes, each teaching one fact. You click the
+  red dot where the outbreak began, move the mouse to bring hidden particles
+  into view, put a mask on a crowd, and watch a simulated outbreak spread from
+  one infected person.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Developer and designer
+client: University of Lethbridge
+event: NMED 3380 · Programming for Artists
+team: { size: 1, role: Solo developer }
+period: "Dec 2020"
+status: shipped
+
+links:
+  github: https://github.com/DonCastillo/covid19_interactive_animation
+
+highlights:
+  - Designed seven scenes that each pair one COVID-19 fact with an interaction, from clicking the outbreak's origin on a map to moving the mouse to watch the virus's crown-like spikes appear.
+  - Simulated transmission with particles, where each infected particle can infect up to two others on contact, to show what a reproduction number of about 2 looks like.
+  - Built the scenes from reusable classes for the virus, people, particles and text boxes, in about 1,400 lines of Processing.
+  - Used a flashlight effect, adapted from Processing's brightness example and credited, to reveal particles lurking on everyday surfaces.
+
+stack:
+  - label: Language
+    items: [Processing, Java]
+  - label: Techniques
+    items: [Particle systems, Object-oriented design, Image processing]
+
+cover:
+  src: /projects/covid19-interactive/cover.webp
+  alt: Title scene reading "Facts about COVID-19" over red coronavirus particles
+
+gallery:
+  - src: /projects/covid19-interactive/desktop/1.webp
+    alt: Map of China with a red dot at the outbreak's origin and dots spreading to nearby cities
+    caption: Where it started
+    kind: desktop
+  - src: /projects/covid19-interactive/desktop/2.webp
+    alt: Virus particles around a hand, with text explaining that the spikes look like a crown, or corona
+    caption: Why it's called coronavirus
+    kind: desktop
+  - src: /projects/covid19-interactive/desktop/3.webp
+    alt: An office photo with red virus particles drifting through the air from one person
+    caption: Spreading through the air
+    kind: desktop
+  - src: /projects/covid19-interactive/desktop/4.webp
+    alt: A dark scene where a flashlight following the mouse lights up a laptop and mouse
+    caption: Particles on everyday surfaces
+    kind: desktop
+  - src: /projects/covid19-interactive/desktop/5.webp
+    alt: A particle simulation of red infected dots spreading among white dots, with text explaining COVID-19's reproduction number of 2 to 2.5
+    caption: Simulating transmission
+    kind: desktop
+
+featured: false
+order: 27
+---

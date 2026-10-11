@@ -1,0 +1,49 @@
+---
+title: Movie Review Classifier
+slug: movie-review-classifier
+category: academic
+summary: A web app that predicts whether a movie review is positive or negative, using a Naive Bayes classifier I implemented from scratch and trained on IMDb reviews.
+problem: >-
+  Review sites boil a reviewer's opinion down to a star rating, but a rating has
+  to be entered explicitly and doesn't say much on its own. Does a 3 mean
+  neutral? Does a 4 mean "not very good"? The sentiment is in the words of the
+  review itself.
+solution: >-
+  A Node.js app where you enter a movie and your review, and a Naive Bayes
+  classifier trained on pre-labelled IMDb reviews predicts whether it's positive
+  or negative, showing the score it gave each class.
+results:
+  - Found that the classifier works best on text like what it was trained on. Trained on movie reviews, it isn't reliable for book or product reviews.
+  - Identified negation as the main source of wrong predictions, since a bag-of-words model counts the "good" in "not good" as positive.
+  - Trained on 5,000 of the dataset's 25,000 training reviews, after a full import proved too slow for the machine the app ran on.
+role: Developer
+client: University of Lethbridge
+event: CPSC 4660 final project
+team: { size: 1, role: Solo developer }
+period: "Apr 2022"
+status: shipped
+
+links:
+  github: https://github.com/DonCastillo/movie-review-classifier
+
+highlights:
+  - Implemented Naive Bayes from scratch in JavaScript, following Jurafsky and Martin's training and testing algorithms, with a log prior for each class and add-one-smoothed log likelihoods for each word.
+  - Built the text pipeline that tokenizes each review, lowercases it, strips punctuation, numbers and stop words, and applies Porter stemming, so "watch", "watching" and "watched" count as one word.
+  - Trained it on 5,000 IMDb reviews, 2,500 positive and 2,500 negative, from the Maas et al. (2011) dataset, and stored the word counts for each class and for the whole corpus in MongoDB.
+  - Built the app in Node.js and Express with EJS views, where a submitted review shows its predicted sentiment and the score for each class, and past reviews can be browsed.
+
+stack:
+  - label: Backend
+    items: [Node.js, Express, MongoDB, Mongoose]
+  - label: NLP
+    items: [Naive Bayes, Porter stemmer, stopword]
+  - label: Frontend
+    items: [EJS, CSS, JavaScript]
+
+cover:
+  src: /projects/movie-review-classifier/cover.webp
+  alt: Movie Review Classifier showing a review and its predicted sentiment
+
+featured: false
+order: 25
+---

@@ -1,0 +1,68 @@
+---
+title: Changing Colors of Canada
+slug: changing-colors-of-canada
+category: academic
+summary: An animated map of every Canadian federal election since 1867, showing how each province and territory split its House of Commons seats between parties.
+problem: >-
+  Election maps make results easy to read, but they usually show one election
+  at a time, so the bigger story is lost: how support for each party rises and
+  falls in each province over decades. The assignment asked for an interactive
+  piece about time and space, and Canada's full election history fits both.
+solution: >-
+  A single-page map of Canada with a column over each province and territory,
+  split into party segments sized by the seats each party won there. Pick any of
+  the 44 elections from 1867 to 2021 and the columns animate to the new result,
+  so you can watch a region's support shift from one election to the next.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Developer and designer
+client: University of Lethbridge
+event: NMED 3720 · The Dynamic Web
+team: { size: 1, role: Solo developer }
+period: "Dec 2023"
+status: shipped
+
+links:
+  live: https://changing-colors-of-canada.netlify.app
+  github: https://github.com/DonCastillo/changing-colors-of-canada
+
+metrics:
+  - { value: "44", label: "federal elections, 1867 to 2021" }
+  - { value: "13", label: "provinces and territories" }
+  - { value: "20", label: "parties tracked" }
+
+highlights:
+  - Researched the seats won by every party in every province and territory across all 44 federal elections, entered them in a spreadsheet, and converted it to JSON.
+  - Built the page in SvelteKit and Tailwind CSS, with a column over each province and territory on the map and a stacked segment for each party, sized by its share of that region's seats.
+  - Animated every change of election year with GSAP, so segments grow, shrink and change colour to show support rising and falling.
+  - Kept each year accurate to its time, with a legend listing only the parties that ran and empty columns for provinces that hadn't yet joined Confederation.
+
+stack:
+  - label: Frontend
+    items: [SvelteKit, Svelte, Tailwind CSS]
+  - label: Animation & data
+    items: [GSAP, JSON]
+  - label: Hosting
+    items: [Netlify]
+
+cover:
+  src: /projects/changing-colors-of-canada/cover.webp
+  alt: Map of Canada for the 2021 election, with a column over each province and territory split into Liberal, Conservative, NDP and Bloc Québécois segments
+
+gallery:
+  - src: /projects/changing-colors-of-canada/desktop/1.webp
+    alt: The 2021 election, with Liberal and Conservative seats in most regions, Bloc Québécois in Quebec and NDP in Nunavut
+    caption: "2021"
+    kind: desktop
+  - src: /projects/changing-colors-of-canada/desktop/2.webp
+    alt: The 1993 election, with Reform dominating Alberta and British Columbia, the Bloc Québécois winning most of Quebec, and Liberals almost everywhere else
+    caption: "1993"
+    kind: desktop
+  - src: /projects/changing-colors-of-canada/desktop/3.webp
+    alt: The 1867 election, with results only for Ontario, Quebec, New Brunswick and Nova Scotia, including Anti-Confederation seats in Nova Scotia
+    caption: "1867"
+    kind: desktop
+
+featured: false
+order: 20
+---

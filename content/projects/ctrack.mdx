@@ -1,0 +1,48 @@
+---
+title: C-Track
+slug: ctrack
+category: academic
+summary: An issue tracker built in C++ by a team of four, with a REST API on the Restbed framework, a console client, and a CI pipeline that tests, lints and checks memory on every push.
+problem: >-
+  Software teams track bugs, features and tasks in tools like Jira and Trello.
+  The course project was to build a simpler version from scratch as a team,
+  working in agile sprints and applying good engineering practice along the way:
+  testing, code review, style rules and documentation.
+solution: >-
+  C-Track, a client–server issue tracker. A REST API stores users, issues and
+  comments, and a console client lets people create, edit, comment on and close
+  issues. Issues can also be browsed in a web browser, filtered by status, type
+  or ID range.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Developer
+client: University of Lethbridge
+event: CPSC 3720 · Introduction to Software Engineering
+team: { size: 4, role: Developer and tester }
+period: "Dec 2020"
+status: shipped
+
+links:
+  github: https://github.com/DonCastillo/ctrack
+
+highlights:
+  - Built a REST API in C++ with Restbed for users, issues and comments, with create, read, update and delete endpoints, filters by status, type and ID range, and JSON storage using nlohmann/json.
+  - Wrote the console client that drives the API, covering creating, editing, commenting on, viewing and deleting issues, and managing users.
+  - Set up a GitLab CI pipeline that builds the server and client, then runs unit tests with coverage, static analysis, cpplint style checks, valgrind memory checks, and Doxygen documentation.
+  - Made 160 of the team's 207 commits over the project's sprints.
+
+stack:
+  - label: Language
+    items: [C++, Restbed, nlohmann/json]
+  - label: Quality
+    items: [Google Test, gcov, cpplint, valgrind, Doxygen]
+  - label: Process
+    items: [GitLab CI, Make, Agile sprints]
+
+cover:
+  src: /projects/ctrack/cover.webp
+  alt: C-Track console client listing issues with their status and type
+
+featured: false
+order: 27.5
+---

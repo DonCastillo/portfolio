@@ -1,0 +1,53 @@
+---
+title: Library Management System
+slug: library-management
+category: academic
+summary: A web app a librarian uses to manage books, authors, genres, borrowers and rentals, built on a MySQL database designed from an entity-relationship model.
+problem: >-
+  A library needs to track its books, their authors and genres, the people who
+  borrow them, and which copies are out and when they're due. The course project
+  was to model a real-world system like this as a relational database and build
+  an application on top of it.
+solution: >-
+  A PHP web application for librarians, backed by a seven-table MySQL database.
+  Librarians can add, list, view, edit and delete every kind of record, rent
+  books out to borrowers, and see what hasn't been returned.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Developer
+client: University of Lethbridge
+event: CPSC 3660 · Introduction to Database
+team: { size: 3, role: Developer }
+period: "Nov 2021"
+status: shipped
+
+links:
+  github: https://github.com/DonCastillo/library-management-db-application
+
+metrics:
+  - { value: "7", label: "tables in the relational schema" }
+  - {
+      value: "5",
+      label: "entities, each with full create, read, update and delete",
+    }
+
+highlights:
+  - Designed the database with my team, from an entity-relationship model to a relational schema of seven MySQL tables, with junction tables because a book can have many authors and many genres.
+  - Enforced the library's rules in the schema, with unique constraints that stop duplicate author names and borrower emails, and cascading deletes that clean up a book's author and genre links.
+  - Wrote the PHP application, with create, list, view, edit and delete pages for books, authors, genres, borrowers and rentals, and clear errors when a duplicate is entered.
+  - Added AJAX lookups to search borrowers and list unreturned books while recording a rental.
+  - Tested every operation against a checklist before the class demo.
+
+stack:
+  - label: Backend
+    items: [PHP, MySQL, SQL]
+  - label: Frontend
+    items: [HTML, CSS, JavaScript, AJAX]
+
+cover:
+  src: /projects/library-management/cover.webp
+  alt: Entity-relationship diagram linking Borrower, Book, Author and Genre through the Rents, Writes and Assigns relationships
+
+featured: false
+order: 26
+---

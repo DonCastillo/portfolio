@@ -1,0 +1,68 @@
+---
+title: The Millionaire's Quiz
+slug: the-millionaires-quiz
+category: academic
+summary: A Who Wants to Be a Millionaire–style trivia game built on the Open Trivia Database, with a Pig Latin mode that doubles the prize money and adds lifelines of its own.
+problem: >-
+  The assignment was to take data from a public REST API and show it "in an
+  unexpected way", giving it new meaning in a single-page site whose design
+  supports the concept. A plain list of trivia questions would meet the
+  technical brief but not the creative one.
+solution: >-
+  A game-show quiz that turns Open Trivia Database questions into a 15-step
+  climb to a million dollars, with lifelines and a public scoreboard. In Pig
+  Latin mode every question and answer is translated, the prizes double, and two
+  extra lifelines help you decode them.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Developer and designer
+client: University of Lethbridge
+event: NMED 3720 · The Dynamic Web
+team: { size: 1, role: Solo developer }
+period: "Oct 2023"
+status: shipped
+
+links:
+  live: https://the-millionaires-quiz.netlify.app
+  github: https://github.com/DonCastillo/the-millionaires-quiz
+
+highlights:
+  - Built the game in SvelteKit and TypeScript, pulling multiple-choice questions from the Open Trivia Database with a session token so a game never repeats a question.
+  - Added a Pig Latin mode that translates every question and answer, doubles the money tree, and adds two lifelines of its own, Unpiglatinized (translate back to English) and Ask the Pig (the right answer, in Pig Latin).
+  - Implemented the classic lifelines too, 50/50, Ask the Audience with simulated votes that aren't always right, and Switch Question.
+  - Saved finished games to a MongoDB scoreboard through Realm Web, with a page for each score.
+  - Recreated the show's look with Tailwind CSS, from the angled answer panels to the 15-step money tree and its milestone rounds.
+
+stack:
+  - label: Frontend
+    items: [SvelteKit, Svelte, TypeScript, Tailwind CSS]
+  - label: APIs & data
+    items: [Open Trivia Database, MongoDB, Realm Web, Axios]
+  - label: Hosting
+    items: [Netlify]
+
+cover:
+  src: /projects/the-millionaires-quiz/cover.webp
+  alt: A quiz question with four answer panels beside the 15-step money tree from $100 to $1,000,000
+
+gallery:
+  - src: /projects/the-millionaires-quiz/desktop/1.webp
+    alt: Start screen with a name field and a choice of Normal mode or Pig Latin mode
+    caption: Choosing a mode
+    kind: desktop
+  - src: /projects/the-millionaires-quiz/desktop/2.webp
+    alt: A question with answer A selected, three lifeline buttons, and the money tree on the right
+    caption: Playing a round
+    kind: desktop
+  - src: /projects/the-millionaires-quiz/desktop/3.webp
+    alt: The Ask the Pig lifeline dialog explaining that the pig gives the answer in Pig Latin
+    caption: Ask the Pig lifeline
+    kind: desktop
+  - src: /projects/the-millionaires-quiz/desktop/4.webp
+    alt: Top scorers list with player names, winnings and dates
+    caption: Scoreboard
+    kind: desktop
+
+featured: false
+order: 21
+---

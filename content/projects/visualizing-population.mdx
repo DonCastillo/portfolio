@@ -1,0 +1,67 @@
+---
+title: Visualizing 8 Billion
+slug: visualizing-population
+category: academic
+summary: A one-page scrolling infographic on the world reaching 8 billion people, told through expressive typography, variable fonts and scroll-triggered animation.
+problem: >-
+  When the world population reached 8 billion in November 2022, the trends
+  behind it (slowing growth, falling birth rates, longer lives, an ageing
+  population) were mostly reported as long text and tables, which are easy to
+  skim past and hard to remember.
+solution: >-
+  A single scrolling page that turns each trend into a typographic composition.
+  Font weight, width and size carry the meaning of each fact, icons count out
+  the numbers, and animations reveal each section as the reader scrolls.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Developer and designer
+client: University of Lethbridge
+event: NMED 4520 · Information Design
+team: { size: 1, role: Solo developer }
+period: "Apr 2023"
+status: shipped
+
+links:
+  live: https://doncastillo.github.io/visualizing-population/
+  github: https://github.com/DonCastillo/visualizing-population
+
+highlights:
+  - Designed a one-page infographic on six population trends, from how long each billion took to how fast the world is ageing, using figures from the UN Population Fund, the World Economic Forum and Visual Capitalist.
+  - Made typography the main visual, setting variable fonts (Roboto Flex, and Lab DJR used with its designer's permission) at different widths, weights and grades so each phrase looks like what it says.
+  - Built the billion-by-billion timeline from JSON with jQuery, drawing a bar and a row of people icons for each billion.
+  - Triggered the animations on scroll with AOS and IntersectionObserver, so bars grow, statistics slide in and the population pyramid builds one step at a time.
+  - Laid out the continents as a photo mosaic, from Asia at 4.7 billion to Oceania at 44 million.
+
+stack:
+  - label: Frontend
+    items: [HTML, CSS, JavaScript, jQuery]
+  - label: Typography & motion
+    items: [Variable fonts, AOS, CSS animations]
+  - label: Hosting
+    items: [GitHub Pages]
+
+cover:
+  src: /projects/visualizing-population/cover.webp
+  alt: Title screen reading "Reaching the eight billion population" over a photo of a crowded city street
+
+gallery:
+  - src: /projects/visualizing-population/desktop/1.webp
+    alt: Timeline showing it took over 1,000 years to reach 1 billion people and 124 years to reach 2 billion, with bars and rows of people icons
+    caption: Billion-by-billion timeline
+    kind: desktop
+  - src: /projects/visualizing-population/desktop/2.webp
+    alt: Photo mosaic of the continents sized by population, with Asia at 4.7 billion filling the left half
+    caption: Population by continent
+    kind: desktop
+  - src: /projects/visualizing-population/desktop/3.webp
+    alt: Life expectancy section with "People live LONGER now" beside 47 years in 1950 and 73 years in 2019, counted out in heart icons
+    caption: Life expectancy
+    kind: desktop
+  - src: /projects/visualizing-population/desktop/4.webp
+    alt: A population pyramid spelling out "Our population is ageing faster and faster", above the share of people aged 65 and up from 5% in 1950 to 16% in 2050
+    caption: An ageing population
+    kind: desktop
+
+featured: false
+order: 22
+---

@@ -1,0 +1,48 @@
+---
+title: Sliding Tiles Solver
+slug: sliding-tiles
+category: academic
+summary: A C++ program that solves the 3×3 sliding-tile puzzle in the fewest moves, using A* search guided by the Manhattan-distance heuristic.
+problem: >-
+  Given a scrambled 3×3 sliding-tile board and a goal layout, find the shortest
+  sequence of moves that gets from one to the other. Trying every possible
+  sequence quickly becomes impractical, so the search has to be guided toward
+  the goal.
+solution: >-
+  A command-line solver that runs A* search over board configurations, always
+  expanding the board with the lowest cost so far plus the Manhattan distance
+  still to go, and prints the moves of the blank tile (up, down, left, right)
+  as the solution.
+results:
+  - Solved the test boards in 20 to 24 moves, printing each solution as a sequence of blank-tile moves.
+role: Developer
+client: University of Lethbridge
+event: CPSC 3620 · Data Structures and Algorithms
+team: { size: 1, role: Solo developer }
+period: "Apr 2020"
+status: shipped
+
+links:
+  github: https://github.com/DonCastillo/sliding-tiles
+
+highlights:
+  - Implemented A* search in C++, ranking each board by the moves taken so far plus its Manhattan distance to the goal, the sum of how far every tile is from its target square.
+  - Modelled each board as a class that generates its next configurations by sliding the blank tile, and records the moves that led to it.
+  - Used a binary heap as the priority queue, adapted from the textbook author's implementation and credited in the code.
+  - Validated input, rejecting boards that aren't nine digits from 0 to 8, are missing the blank, or repeat a tile, and stopped a search after 99,999 expansions when a board has no solution.
+
+stack:
+  - label: Language
+    items: [C++11]
+  - label: Algorithms
+    items: [A* search, Binary heap, Manhattan distance]
+  - label: Build
+    items: [Make, Code::Blocks]
+
+cover:
+  src: /projects/sliding-tiles/cover.webp
+  alt: Terminal output solving three sliding-tile puzzles, showing each start board, goal board, number of moves and the solution sequence
+
+featured: false
+order: 30
+---

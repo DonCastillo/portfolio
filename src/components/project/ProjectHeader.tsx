@@ -18,7 +18,8 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
     award && { label: "Award", value: award },
     team && {
       label: "Team",
-      value: `${team.size} people · ${team.role}`,
+      // A team of one is just the role ("Solo developer"), not "1 people".
+      value: team.size === 1 ? team.role : `${team.size} people · ${team.role}`,
     },
     {
       label: "Period",

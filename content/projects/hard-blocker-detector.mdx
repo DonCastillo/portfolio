@@ -1,0 +1,58 @@
+---
+title: Hard Blocker Detector
+slug: hard-blocker-detector
+category: hackathon
+summary: An AI tool that reads a job posting against your profile and flags any hard rule that disqualifies you, quoting the sentence that proves it, before you spend an hour applying.
+problem: >-
+  A tailored job application takes 30–40 minutes, and much of that goes to
+  postings the applicant was never eligible for. The disqualifying rule is
+  stated once, often indirectly: "no visa sponsorship" in the benefits footer,
+  or "must live near our Austin office" under a header that says Remote. Triaging
+  ten postings by hand took 16 minutes, and a third of them had a hard blocker.
+solution: >-
+  A command-line tool that makes one Claude call per posting. It checks 14 kinds
+  of hard blocker, quotes the exact sentence for each one it finds, and drops
+  any quote that isn't actually in the posting. The verdict, SKIP or APPLY,
+  sits beside the line of your profile it conflicts with.
+results:
+  - Showed that a one-sentence definition for each of the 14 blocker types was worth 0.130 of the 0.155 F1 gain; every more elaborate agent technique tried after it was measured and removed.
+  - Requiring a quoted sentence added nothing to F1 but cut human review from 97 to 14 seconds a posting, because each verdict can be checked without reopening the posting.
+  - Kept the result honest by freezing the evaluation protocol before writing the system; all four later amendments made the result less impressive, not more.
+role: AI Engineer
+event: micro1 Agentic Workflows Hackathon
+duration: 3 days
+team: { size: 1, role: Solo developer }
+period: "Aug 2026"
+status: shipped
+
+links:
+  github: https://github.com/DonCastillo/micro-1-hackathon
+
+metrics:
+  - { value: "0.944", label: "detection F1, up from 0.789" }
+  - { value: "100%", label: "of claims cite the posting, up from 0%" }
+  - { value: "14 s", label: "human review per posting, down from 97 s" }
+  - { value: "$0.0044", label: "cost per posting, cheaper than the baseline" }
+
+highlights:
+  - Froze the evaluation protocol before writing the system, with 24 seeded synthetic postings whose blockers are planted at exact character spans, plus 8 clean postings with near-misses so that flagging everything can't score well.
+  - Built a one-call Claude pipeline that returns each blocker with its verbatim evidence, then a free, mechanical grounding check that drops any quote not found in the posting, taking hallucinated evidence to zero.
+  - Ran the baseline and final system three times each to measure the noise floor (0.061 F1), so no gain smaller than run-to-run variation is claimed.
+  - Built, measured and removed four more elaborate designs (per-group decomposition and two verification passes), each documented in the changelog with what it cost.
+  - Directed Claude Code (Claude Opus 5) through 115 turns to write all of the code, tests and documentation, and submitted the full development transcript.
+
+stack:
+  - label: Core
+    items: [Python, Claude API]
+  - label: Data & evaluation
+    items: [PyYAML, pytest]
+  - label: Built with
+    items: [Claude Code]
+
+cover:
+  src: /projects/hard-blocker-detector/cover.webp
+  alt: Hard Blocker Detector terminal output marking a posting SKIP and quoting the sentence that blocks it
+
+featured: false
+order: 11
+---

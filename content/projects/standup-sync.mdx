@@ -1,0 +1,70 @@
+---
+title: Standup Sync
+slug: standup-sync
+category: hackathon
+summary: An AI web app that reads the actual code changes in a git repo and writes Slack, email and standup updates for developers or clients. Built solo with IBM Bob.
+problem: >-
+  Every standup, status email and client update starts with a developer
+  scrolling through git log to reconstruct what got done. Commit messages rarely
+  help ("fix stuff", "wip"), so people open diffs, jump between branches and
+  piece the week together from memory. Unmerged branch work gets forgotten, and
+  reverts or formatting changes get reported as progress.
+solution: >-
+  A web app that writes those updates from the code itself. Paste a repository
+  URL and pick a date range: it reads every branch's diffs, keeps only the
+  meaningful changes, and produces ready-to-post Slack, email and standup
+  updates, each in a developer version and a client version.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Full Stack Developer
+event: IBM Bob 2.0 challenge (lablab.ai)
+duration: 2 days
+team: { size: 1, role: Solo developer }
+period: "Sep 2026"
+status: shipped
+
+links:
+  live: https://standup-sync.onrender.com
+  demo: https://youtu.be/U1RgV6Qivug
+  github: https://github.com/DonCastillo/standup-sync
+
+metrics:
+  - { value: "6", label: "updates from one run" }
+  - { value: "2 of 5", label: "pipeline steps use an LLM" }
+  - { value: "−82%", label: "clone time on microsoft/vscode (807 → 143 s)" }
+  - { value: "102", label: "automated tests" }
+
+highlights:
+  - Built a FastAPI pipeline that clones every branch with a blobless, shallow clone, then filters merges, lock files, whitespace-only diffs and reverts in code, so the LLM only sees changes worth reporting.
+  - Wrote the prompts that summarize each commit from its diff and tag it major or minor, then turn the major ones into Slack, email and standup updates, with length limits enforced in code as well as in the prompt.
+  - Put every LLM call behind one client module, so the app switches between IBM watsonx.ai (Mistral Small 3.1) and Claude Haiku 4.5 with a settings change.
+  - Streamed live progress to the browser and ran LLM batches concurrently, and cut a week's clone of microsoft/vscode from 807 to 143 seconds by fetching file contents in one request.
+  - Used IBM Bob to plan from my specs, set up watsonx.ai and build the first version in one day, then wrote 102 pytest tests that found and fixed bugs such as commits lost on very active repos.
+
+stack:
+  - label: Backend
+    items: [Python, FastAPI, Uvicorn, Pydantic]
+  - label: AI
+    items: [IBM watsonx.ai, Claude API, IBM Bob]
+  - label: Frontend
+    items: [HTML, CSS, JavaScript]
+  - label: Testing & hosting
+    items: [pytest, Git, Render]
+
+cover:
+  src: /projects/standup-sync/cover.webp
+  alt: Standup Sync landing page with the headline "Your standup, written from the code" beside a git log turned into a Slack update
+
+gallery:
+  - src: /projects/standup-sync/desktop/1.webp
+    alt: Standup Sync after a run on directus/directus, with all five pipeline steps done, a Slack update written from the diffs, and per-developer stats across three branches
+    caption: A run on directus/directus
+    kind: desktop
+  - src: /projects/standup-sync/desktop/2.webp
+    alt: Landing page with the headline "Your standup, written from the code" and an example of vague commit messages turned into clear accomplishments
+    caption: Landing page
+    kind: desktop
+
+featured: false
+order: 9
+---

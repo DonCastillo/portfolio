@@ -1,0 +1,60 @@
+---
+title: Buy or Wait?
+slug: buy-or-wait
+category: hackathon
+summary: A financial decision engine that answers "Can I afford this?" by forecasting a user's balance 90 days ahead and recommending full payment, a partial plan, installments, waiting, or not buying.
+problem: >-
+  "Can I afford this laptop?" can't be answered from the current balance alone.
+  The answer depends on rent, loans and subscriptions coming up, pending
+  payments, confirmed income, the payment options on offer, and facts buried in
+  messages and receipt images. Two people with the same balance can need
+  different answers, depending on their commitments and what they're willing to
+  cut back on.
+solution: >-
+  A decision engine that rebuilds each user's finances on the day they ask,
+  forecasts their balance day by day for 90 days, and tries every eligible way
+  to pay. It recommends the safest plan that never drops below the user's
+  minimum balance, with the exact payment dates and any spending changes it
+  needs.
+results:
+  - Matched 118 of 150 scored fields exactly on the public samples, with the safe amount within about 5% of each user's headroom on average.
+  - Message and image classifications were identical across two independent passes, so the whole run reproduces from the cache in about a second, with or without an API key.
+  - Every explanation is built only from the computed numbers, so the figures it states always match the plan it recommends.
+role: AI Engineer
+event: HackerRank Orchestrate (September 2026)
+duration: 2 days
+team: { size: 1, role: Solo developer }
+period: "Sep 2026"
+status: shipped
+
+links:
+  github: https://github.com/DonCastillo/hackerrank-orchestrate-september26
+
+metrics:
+  - { value: "250", label: "financial requests decided" }
+  - { value: "118 / 150", label: "sample fields matched exactly" }
+  - { value: "$0.006", label: "AI cost per request" }
+  - { value: "5", label: "currencies converted at dated rates" }
+
+highlights:
+  - Kept every money decision in deterministic Python with exact decimal arithmetic, and used Claude Opus 5 only to read the 215 messages and 16 images, each classified once into one of 9 structured actions and cached by content hash.
+  - Rebuilt each user's position on the request date from settled history, reserved pending debits and scheduled payments, then projected recurring income and expenses 90 days ahead, converting foreign amounts at the rate on their settlement date.
+  - Built a planner that tries full payment, full payment with the fewest permitted spending cuts, partial payment, every seller installment option and waiting, keeps only plans that stay above the minimum balance, and ranks them by the challenge's rules.
+  - Treated message and image content as untrusted, so embedded instructions and unverified claims such as prizes, "pay now" requests or suspected theft never change the numbers.
+  - Reverse-engineered the reference logic by hand-tracing 8 sample requests and grid-searching two settings, and documented every finding and remaining difference.
+
+stack:
+  - label: Core
+    items: [Python, Claude API]
+  - label: Data
+    items: [CSV, Decimal, structured outputs]
+  - label: Tooling
+    items: [unittest, venv]
+
+cover:
+  src: /projects/buy-or-wait/cover.webp
+  alt: Buy or Wait? decision output recommending a payment plan for a requested purchase
+
+featured: false
+order: 10
+---

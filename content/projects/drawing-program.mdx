@@ -1,0 +1,63 @@
+---
+title: Drawing Program
+slug: drawing-program
+category: academic
+summary: A simple, intuitive drawing app in Processing, with a palette of colours and brushes, keyboard controls for size and opacity, and colour randomizing and mirror modes.
+problem: >-
+  The first project of the course was to build a drawing program in Processing:
+  one that's simple to pick up, but gives the person drawing real control over
+  colour, brush and stroke.
+solution: >-
+  A drawing app with a palette down the left side for colours and brushes, arrow
+  keys to change the brush size and opacity as you draw, a preview of the
+  current brush, and shortcuts to randomize colour, mirror strokes, clear the
+  canvas and save the drawing as a PNG.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Developer and designer
+client: University of Lethbridge
+event: NMED 3380 · Programming for Artists
+team: { size: 1, role: Solo developer }
+period: "Sep 2020"
+status: shipped
+
+links:
+  github: https://github.com/DonCastillo/drawing_program
+
+highlights:
+  - Sketched the interface on paper first, then built a 16-colour palette and five brushes (regular, air, arrow, circle and square) along the left edge of the canvas.
+  - Mapped the arrow keys to brush size and opacity so both can change mid-stroke, with a live preview of the current brush in the corner.
+  - Added a colour randomizer that changes the colour as you draw, a mirror mode that draws a reflected copy of every stroke, and shortcuts to clear the canvas or save it as a PNG.
+  - Organized the code around Brush and Button classes, laying the palette out in a loop rather than placing each button by hand.
+
+stack:
+  - label: Language
+    items: [Processing, Java]
+  - label: Techniques
+    items: [Object-oriented design, Event handling]
+
+cover:
+  src: /projects/drawing-program/cover.webp
+  alt: A colourful drawing made with the program, a green hill, sun and clouds above a field of purple flowers, beside the palette of colours and brushes
+
+gallery:
+  - src: /projects/drawing-program/desktop/1.webp
+    alt: A drawing of a green hill under a sun and blue clouds, above a field of purple flowers, made with the regular and air brushes
+    caption: A drawing made with the app
+    kind: desktop
+  - src: /projects/drawing-program/desktop/2.webp
+    alt: A drawing of large red poinsettia flowers with black outlines and green leaves
+    caption: Another drawing
+    kind: desktop
+  - src: /projects/drawing-program/desktop/3.webp
+    alt: The empty canvas with the colour palette, five brush buttons and the brush preview in the bottom corner
+    caption: The interface
+    kind: desktop
+  - src: /projects/drawing-program/desktop/4.webp
+    alt: A pencil sketch of the interface in a notebook, with notes on the canvas size and on the arrow keys for size and opacity
+    caption: Planning sketch
+    kind: desktop
+
+featured: false
+order: 29
+---
