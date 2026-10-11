@@ -6,7 +6,7 @@ type ProjectHeaderProps = {
   project: Project;
 };
 
-/** Back link, title, summary and the mono meta line (role · client/event · period · team). */
+/** Back link, title, summary and the mono meta list (role, client/event, award, team, period), one per line. */
 export function ProjectHeader({ project }: ProjectHeaderProps) {
   const { title, summary, role, client, event, award, period, duration, team } =
     project;
@@ -19,6 +19,10 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
     team && {
       label: "Team",
       value: `${team.size} people · ${team.role}`,
+    },
+    {
+      label: "Period",
+      value: duration ? `${period} · ${duration}` : period,
     },
   ].filter((item) => !!item);
 
@@ -42,20 +46,14 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
         {summary}
       </p>
 
-      <dl className="mt-5 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-muted md:text-[13px]">
+      {/* One fact per line; labels in a fixed column so the values line up. */}
+      <dl className="mt-5 space-y-1.5 font-mono text-xs text-muted md:text-[13px]">
         {meta.map(({ label, value }) => (
-          <div key={label} className="flex gap-2">
-            <dt className="uppercase">{label}</dt>
-            <span aria-hidden>·</span>
+          <div key={label} className="flex gap-4">
+            <dt className="w-16 shrink-0 uppercase">{label}</dt>
             <dd className="text-ink-2">{value}</dd>
           </div>
         ))}
-        <div>
-          <dt className="sr-only">Period</dt>
-          <dd className="text-ink-2 uppercase">
-            {duration ? `${period} · ${duration}` : period}
-          </dd>
-        </div>
       </dl>
     </header>
   );

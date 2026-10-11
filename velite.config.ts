@@ -3,6 +3,11 @@ import { defineCollection, defineConfig, s } from "velite";
 // s.mdx() reports an empty file body as an issue, which --strict turns into a build
 // failure. The long-form body is optional, so compile it only when there is one.
 const mdx = s.mdx();
+const stackGroup = s.object({
+  label: s.string(),
+  items: s.array(s.string()).min(1),
+});
+
 const optionalMdx = s
   .custom<string | undefined>((i) => i === undefined || typeof i === "string")
   .transform(async (value, { meta, addIssue }) => {
@@ -46,7 +51,15 @@ const projects = defineCollection({
       .max(4)
       .optional(),
     highlights: s.array(s.string()).min(2).max(5),
-    stack: s.array(s.string()).min(1),
+    // A flat list, or labelled groups ("App", "Backend & CMS") for projects with
+    // several parts. Flat lists become one unlabelled group, so pages only see groups.
+    stack: s
+      .union([s.array(s.string()).min(1), s.array(stackGroup).min(1)])
+      .transform((stack): { label?: string; items: string[] }[] =>
+        typeof stack[0] === "string"
+          ? [{ items: stack as string[] }]
+          : (stack as { label: string; items: string[] }[]),
+      ),
 
     // src is a path in public/, e.g. "/projects/gac-paq/cover.webp".
     // kind "mobile": a phone screenshot, shown whole and centred instead of cropped.

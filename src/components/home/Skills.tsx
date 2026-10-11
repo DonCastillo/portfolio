@@ -1,7 +1,7 @@
-import { StackList } from "@/components/ui/StackList";
+import { StackRows } from "@/components/ui/StackRows";
 import { skills } from "@/data/skills";
 
-/** One line per group: muted label, then the dot-separated list (stacked on mobile). */
+/** Grouped skills, in the same rows as grouped project stacks. */
 export function Skills() {
   return (
     <section id="skills" aria-labelledby="skills-heading" className="mt-20">
@@ -11,19 +11,7 @@ export function Skills() {
       >
         Skills
       </h2>
-      <dl className="mt-6 space-y-4">
-        {skills.map(({ label, skills }) => (
-          <div
-            key={label}
-            className="grid gap-1 md:grid-cols-[10rem_1fr] md:items-baseline md:gap-6"
-          >
-            <dt className="text-sm text-muted">{label}</dt>
-            <dd>
-              <StackList items={skills} />
-            </dd>
-          </div>
-        ))}
-      </dl>
+      <StackRows groups={skills} className="mt-6" />
     </section>
   );
 }

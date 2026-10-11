@@ -1,7 +1,7 @@
 ---
 # PLACEHOLDER CONTENT: fake copy, metrics and image paths to build M3 against.
 # Replace every field with real details before launch (see PLAN.md section 11).
-title: GAC-PAQ
+title: Global Adolescent and Child Physical Activity Questionnaire (GAC-PAQ)
 slug: gac-paq
 category: professional
 summary: A multilingual research app that lets participants around the world complete a physical activity questionnaire on their phone, with an admin portal for the research team.
@@ -16,23 +16,29 @@ sourceNote: Source private (research project)
 
 metrics:
   - { value: "17", label: "countries" }
-  - { value: "23", label: "languages" }
-  - { value: "4.8★", label: "store rating" }
-  - { value: "10k+", label: "responses" }
+  - { value: "23", label: "localized versions and languages" }
+  - { value: "24k+", label: "responses (testing and main study)" }
+  - { value: "5400", label: "participants (as of 9/7/26)" }
+  # - { value: "v5.0.2", label: "current app version" }
 
 highlights:
-  - Built the cross-platform mobile app in React Native and TypeScript, from first prototype to store release.
-  - Designed a translation pipeline that took the app from 1 to 23 languages, including right-to-left and CJK scripts.
-  - Built the admin portal the research team uses to manage studies and export responses.
-  - Cut questionnaire completion time by 30% by redesigning the flow from participant feedback.
+  - Built and shipped a cross-platform iOS and Android research app used in 17 countries, with 23 localized versions in 14 languages (including Arabic, Hindi, Thai and Māori), to collect physical-activity data from children, teens and adults.
+  - Designed an offline-first submission pipeline with AsyncStorage queuing and background tasks that retry failed uploads every 15 minutes, so no data is lost in places with poor connectivity.
+  - Built three UI modes for different age groups (kid, teen, adult) that change question wording and the component set at runtime, plus audio narration for visually-challenged users.
+  - Built a secure backend admin portal enabling research stakeholders to retrieve, manage, monitor, and export collected data from a single centralized interface across 17 countries
+  - Drove app adoption and ensured data integrity by conducting iterative closed testing with 30-40 remote testers and delivering multi-format technical support through email, video tutorials, and live demos
 
 stack:
-  - React Native
-  - TypeScript
-  - Expo
-  - Node.js
-  - PostgreSQL
-  - React
+  - label: App
+    items: [React Native, TypeScript, Expo]
+  - label: State & data
+    items: [Redux, AsyncStorage, REST]
+  - label: Backend & CMS
+    items: [Node.js, Directus, MySQL, Redis]
+  - label: Infrastructure
+    items: [Docker, Linux]
+  - label: Deployment
+    items: [App Store, Google Play]
 
 cover:
   src: /projects/gac-paq/cover.webp
@@ -60,9 +66,22 @@ featured: true
 order: 1
 ---
 
-## Background
+## Countries
 
-Placeholder write-up. This section tests that the optional MDX body renders on the project page.
-
-- One point about the problem
-- One point about the approach
+- Brazil
+- Canada
+- Chile
+- China
+- Colombia
+- Czech Republic
+- Ghana
+- India
+- Malawi
+- Mexico
+- Nepal
+- New Zealand
+- Nigeria
+- Spain
+- Sweden
+- Thailand
+- United Arab Emirates

@@ -80,7 +80,7 @@ export function ProjectCard({
       <p className="mt-2 text-[15px] leading-relaxed text-body">{summary}</p>
 
       <StackList
-        items={stack.slice(0, STACK_LIMIT)}
+        items={stack.flatMap((group) => group.items).slice(0, STACK_LIMIT)}
         label="Stack: "
         className="mt-3"
       />

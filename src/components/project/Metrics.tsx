@@ -9,7 +9,7 @@ export function Metrics({ metrics }: MetricsProps) {
   return (
     <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-border pt-8 md:grid-cols-4">
       {metrics.map(({ value, label }) => (
-        <div key={label} className="flex flex-col-reverse gap-1">
+        <div key={label} className="flex flex-col-reverse justify-end gap-1">
           <dt className="text-sm text-muted">{label}</dt>
           <dd className="font-mono text-[2rem] leading-none font-semibold tracking-tight text-accent">
             {value}
