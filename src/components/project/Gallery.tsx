@@ -1,12 +1,12 @@
 import { imageExists } from "@/lib/images";
 import type { Project } from "@/lib/projects";
-import { GalleryGrid } from "./GalleryGrid";
+import { GalleryCarousel } from "./GalleryCarousel";
 
 type GalleryProps = {
   gallery: Project["gallery"];
 };
 
-/** Phone screenshots as portrait tiles, then desktop images full width, opening in a lightbox. */
+/** Screenshots as a one-row carousel (phone, then tablet, then desktop), opening in a lightbox. */
 export function Gallery({ gallery }: GalleryProps) {
   // Skip images not in public/ yet, so missing screenshots don't render as broken images.
   const items = gallery.filter((image) => imageExists(image.src));
@@ -14,19 +14,7 @@ export function Gallery({ gallery }: GalleryProps) {
 
   return (
     <section aria-labelledby="gallery" className="mt-12">
-      <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h2
-          id="gallery"
-          className="text-[22px] font-semibold tracking-tight text-ink"
-        >
-          Gallery
-        </h2>
-        <p className="font-mono text-xs tracking-wide text-subtle uppercase">
-          {items.length} {items.length === 1 ? "screen" : "screens"} · Click to
-          enlarge
-        </p>
-      </div>
-      <GalleryGrid items={items} />
+      <GalleryCarousel items={items} />
     </section>
   );
 }

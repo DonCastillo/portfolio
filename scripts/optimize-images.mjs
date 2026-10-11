@@ -1,4 +1,5 @@
-// Converts original screenshots in assets/projects/<slug>/ to WebP in public/projects/<slug>/.
+// Converts original screenshots in assets/projects/<slug>/ (subfolders included, e.g.
+// phone/1.png) to WebP at the same relative path in public/projects/<slug>/.
 //
 //   cover.*            → max 1600px wide
 //   portrait images    → max 800px wide (phone screenshots)
@@ -76,14 +77,14 @@ async function main() {
 
   for (const slug of slugs.filter((d) => d.isDirectory())) {
     const srcDir = path.join(SRC_DIR, slug.name);
-    const outDir = path.join(OUT_DIR, slug.name);
-    await mkdir(outDir, { recursive: true });
-
-    const files = (await readdir(srcDir)).filter((f) =>
+    const files = (await readdir(srcDir, { recursive: true })).filter((f) =>
       INPUT_EXT.has(path.extname(f).toLowerCase()),
     );
     for (const file of files) {
-      const out = path.join(outDir, `${path.parse(file).name}.webp`);
+      const { dir, name } = path.parse(file);
+      const outDir = path.join(OUT_DIR, slug.name, dir);
+      await mkdir(outDir, { recursive: true });
+      const out = path.join(outDir, `${name}.webp`);
       counts[await optimize(path.join(srcDir, file), out)]++;
     }
   }

@@ -43,6 +43,7 @@ const projects = defineCollection({
       github: s.string().url().optional(),
       demo: s.string().url().optional(), // demo video
       live: s.string().url().optional(), // live site / app store
+      website: s.string().url().optional(), // the project's own site, e.g. a research study's
     }),
     sourceNote: s.string().optional(), // "Source private (research project)"
 
@@ -78,7 +79,7 @@ const projects = defineCollection({
           src: s.string(),
           alt: s.string(),
           caption: s.string().optional(),
-          kind: s.enum(["mobile", "desktop"]).default("desktop"),
+          kind: s.enum(["mobile", "tablet", "desktop"]).default("desktop"),
         }),
       )
       .default([]),

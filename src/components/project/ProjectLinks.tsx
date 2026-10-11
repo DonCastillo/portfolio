@@ -6,11 +6,12 @@ type ProjectLinksProps = {
   sourceNote?: string;
 };
 
-/** Live ↗ · Demo video ↗ · GitHub ↗. Missing links are hidden; without GitHub, the source note shows instead. */
+/** Live ↗ · Demo video ↗ · Project website ↗ · GitHub ↗. Missing links are hidden; without GitHub, the source note shows instead. */
 export function ProjectLinks({ links, sourceNote }: ProjectLinksProps) {
   const items = [
     links.live && { href: links.live, label: "Live app" },
     links.demo && { href: links.demo, label: "Demo video" },
+    links.website && { href: links.website, label: "Project website" },
     links.github && { href: links.github, label: "GitHub" },
   ].filter((item) => !!item);
   const note = !links.github && sourceNote;

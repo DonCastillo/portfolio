@@ -47,6 +47,7 @@ export default async function ProjectPage({
       {project.links.demo && (
         <DemoVideo url={project.links.demo} title={project.title} />
       )}
+      <Gallery gallery={project.gallery} />
       {project.metrics && <Metrics metrics={project.metrics} />}
       <ProjectSummary title="Problem" id="problem" text={project.problem} />
       <ProjectSummary title="Solution" id="solution" text={project.solution} />
@@ -55,7 +56,6 @@ export default async function ProjectPage({
       {project.results && (
         <Highlights highlights={project.results} title="Results" id="results" />
       )}
-      <Gallery gallery={project.gallery} />
       {project.body && <ProjectBody code={project.body} />}
       <NextProject next={getNext(project.slug)} />
     </article>

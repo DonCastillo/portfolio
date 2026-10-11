@@ -229,7 +229,7 @@ Rules:
 - Grid: `repeat(auto-fit, minmax(320px, 1fr))`.
 
 ### Project `/projects/[slug]`
-Order: ← All projects · **Title** · Summary · Meta line (role · client/event · period · team) · **Links** (Live ↗, Demo video ↗, GitHub ↗ or source note) · **Demo video** (poster + play button, loads on click) · **Metrics** (if any) · **Problem** (if any) · **Solution** (if any) · **What I did** (highlights) · **Tech stack** · **Results** (if any; qualitative, not the metrics) · **Gallery** (mobile tiles, then desktop images; lightbox on click) · optional MDX body · **Next project →**.
+Order: ← All projects · **Title** · Summary · Meta line (role · client/event · period · team) · **Links** (Live ↗, Demo video ↗, GitHub ↗ or source note) · **Demo video** (poster + play button, loads on click) · **Gallery** (one-row carousel; lightbox on click) · **Metrics** (if any) · **Problem** (if any) · **Solution** (if any) · **What I did** (highlights) · **Tech stack** · **Results** (if any; qualitative, not the metrics) · optional MDX body · **Next project →**.
 
 ### Contact `/contact`
 - Fields: name, email, message, plus a hidden honeypot. All are labelled `<label>`s with native validation.

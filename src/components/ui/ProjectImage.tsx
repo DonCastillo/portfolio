@@ -1,11 +1,17 @@
-export type ImageKind = "cover" | "mobile" | "desktop";
+export type ImageKind = "cover" | "mobile" | "tablet" | "desktop";
 
-/** Box shape and the size `pnpm images` outputs for each kind; width/height are aspect hints that prevent layout shift. */
+/** Box shape and the size `pnpm images` outputs for each kind; width/height are aspect hints that prevent layout shift. `ratio` is width / height, matching `aspect`. */
 const shapes = {
-  cover: { aspect: "aspect-16/10", width: 1600, height: 1000 },
-  mobile: { aspect: "aspect-9/19", width: 800, height: 1689 },
-  desktop: { aspect: "aspect-video", width: 1200, height: 675 },
+  cover: { aspect: "aspect-16/10", ratio: 16 / 10, width: 1600, height: 1000 },
+  mobile: { aspect: "aspect-9/19", ratio: 9 / 19, width: 800, height: 1689 },
+  tablet: { aspect: "aspect-41/59", ratio: 41 / 59, width: 800, height: 1151 }, // portrait iPad, 1640×2360
+  desktop: { aspect: "aspect-video", ratio: 16 / 9, width: 1200, height: 675 },
 } as const;
+
+/** Width / height of a kind's frame, e.g. to size a tile from a fixed height. */
+export function imageRatio(kind: ImageKind): number {
+  return shapes[kind].ratio;
+}
 
 type ProjectImageProps = {
   src: string;
