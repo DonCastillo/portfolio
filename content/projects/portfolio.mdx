@@ -1,0 +1,47 @@
+---
+title: Portfolio
+slug: portfolio
+category: personal
+summary: This site. A statically exported Next.js portfolio where every project is a typed case study, with an image pipeline and no runtime server.
+problem: >-
+  Most of my best work is private client or research code, so a GitHub profile
+  alone can't show what I built or what it achieved. I needed a place to present
+  each project as a short case study that a recruiter can read in a few minutes.
+solution: >-
+  A statically exported Next.js site where every project follows the same
+  case-study structure (problem, solution, metrics, what I did, stack and
+  results), written as MDX and checked at build time.
+# results:
+#   - What changed after launch (don't repeat the metrics)
+role: Design and development
+period: "2026 – Present"
+status: in-progress
+
+links:
+  live: https://don-myportfolio.netlify.app
+  github: https://github.com/DonCastillo/portfolio
+
+highlights:
+  - Made each project a typed case study, with MDX files validated by a Velite schema so a missing or invalid field fails the build instead of shipping a broken page.
+  - Built an image pipeline with Sharp that converts screenshots to WebP, sizes them by type (phone, tablet, desktop) and fails the build on any image over 250 KB.
+  - Built the gallery carousel with CSS scroll-snap instead of a carousel library, a lightbox that loads only when opened, and one scroll-tracking hook shared by the sidebar and the table of contents.
+  - Kept it accessible, with a skip link, keyboard-reachable navigation and gallery, reduced-motion support, and every text colour at 4.5:1 contrast or better.
+  - Deployed as a static export to Netlify, with GitHub Actions running lint, format, type and build checks on every push, Netlify Forms for contact, and analytics only in production.
+
+stack:
+  - label: Frontend
+    items: [Next.js, React, TypeScript, Tailwind CSS]
+  - label: Content
+    items: [MDX, Velite]
+  - label: Tooling
+    items: [Sharp, ESLint, Prettier, GitHub Actions]
+  - label: Hosting
+    items: [Netlify]
+
+cover:
+  src: /projects/portfolio/cover.webp
+  alt: Portfolio home page with the hero, impact numbers and skills
+
+featured: false
+order: 11
+---
