@@ -29,8 +29,9 @@ export function ProjectToc({ items }: ProjectTocProps) {
   }, [clicked]);
 
   return (
-    <nav aria-label="On this page">
-      <p className="font-mono text-xs tracking-wide text-subtle uppercase">
+    // Left rule sets it apart from the content; the current item draws over it in teal.
+    <nav aria-label="On this page" className="border-l border-border">
+      <p className="pl-4 font-mono text-xs tracking-wide text-subtle uppercase">
         On this page
       </p>
       <ul className="mt-3 space-y-1">
@@ -40,10 +41,10 @@ export function ProjectToc({ items }: ProjectTocProps) {
               href={`#${id}`}
               onClick={() => setClicked(id)}
               aria-current={active === id ? "true" : undefined}
-              className={`block py-1 text-sm ${
+              className={`-ml-px block border-l-2 py-1 pl-4 text-sm ${
                 active === id
-                  ? "font-medium text-accent"
-                  : "text-muted hover:text-ink"
+                  ? "border-accent font-medium text-accent"
+                  : "border-transparent text-muted hover:text-ink"
               }`}
             >
               {label}
