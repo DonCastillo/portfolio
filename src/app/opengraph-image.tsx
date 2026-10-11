@@ -12,6 +12,6 @@ export default function Image() {
   return ogImage({
     eyebrow: `${site.title} · ${site.location}`,
     title: site.name,
-    subtitle: intro,
+    subtitle: intro[0],
   });
 }

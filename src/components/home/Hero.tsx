@@ -19,9 +19,11 @@ export function Hero() {
       >
         {site.name}
       </h1>
-      <p className="mt-6 max-w-150 text-lg leading-relaxed md:text-xl">
-        {intro}
-      </p>
+      <div className="mt-6 max-w-150 space-y-4 text-lg leading-relaxed md:text-xl">
+        {intro.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <ButtonLink href={site.links.resume} download>
           Download resume
