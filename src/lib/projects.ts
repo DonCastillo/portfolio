@@ -17,6 +17,18 @@ const categories = {
   personal: "Personal",
 } as const satisfies Record<Category, string>;
 
+/** Singular category names, for one project (the eyebrow on its page). */
+const categoryNames = {
+  professional: "Professional",
+  hackathon: "Hackathon",
+  academic: "Academic",
+  personal: "Personal",
+} as const satisfies Record<Category, string>;
+
+export function categoryName(category: Category): string {
+  return categoryNames[category];
+}
+
 const sorted = [...projects].sort((a, b) => a.order - b.order);
 
 /** All projects, sorted by `order`. */

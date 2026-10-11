@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
-import type { Project } from "@/lib/projects";
+import { categoryName, type Project } from "@/lib/projects";
 
 type ProjectHeaderProps = {
   project: Project;
 };
 
-/** Back link, title, summary and the mono meta list (role, client/event, award, team, period), one per line. */
+/** Back link with the category eyebrow opposite, title, summary and the mono meta list (role, client/event, award, team, period), one per line. */
 export function ProjectHeader({ project }: ProjectHeaderProps) {
   const { title, summary, role, client, event, award, period, duration, team } =
     project;
@@ -28,12 +28,17 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
 
   return (
     <header>
-      <Link
-        href="/projects"
-        className="inline-flex min-h-11 items-center gap-1.5 text-sm text-ink-2 hover:text-accent"
-      >
-        <span aria-hidden>←</span> All projects
-      </Link>
+      <div className="flex items-center justify-between gap-4">
+        <Link
+          href="/projects"
+          className="inline-flex min-h-11 items-center gap-1.5 text-sm text-ink-2 hover:text-accent"
+        >
+          <span aria-hidden>←</span> All projects
+        </Link>
+        <p className="font-mono text-xs tracking-wide text-subtle uppercase">
+          {categoryName(project.category)}
+        </p>
+      </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
         <h1 className="text-[2.5rem] leading-tight font-semibold tracking-tight text-ink md:text-display">
