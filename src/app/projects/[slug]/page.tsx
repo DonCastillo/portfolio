@@ -8,6 +8,7 @@ import { NextProject } from "@/components/project/NextProject";
 import { ProjectBody } from "@/components/project/ProjectBody";
 import { ProjectHeader } from "@/components/project/ProjectHeader";
 import { ProjectLinks } from "@/components/project/ProjectLinks";
+import { ProjectSummary } from "@/components/project/ProjectSummary";
 import { StackTags } from "@/components/project/StackTags";
 import { getNext, getProject, getProjects } from "@/lib/projects";
 
@@ -47,8 +48,13 @@ export default async function ProjectPage({
         <DemoVideo url={project.links.demo} title={project.title} />
       )}
       {project.metrics && <Metrics metrics={project.metrics} />}
+      <ProjectSummary title="Problem" id="problem" text={project.problem} />
+      <ProjectSummary title="Solution" id="solution" text={project.solution} />
       <Highlights highlights={project.highlights} />
       <StackTags stack={project.stack} />
+      {project.results && (
+        <Highlights highlights={project.results} title="Results" id="results" />
+      )}
       <Gallery gallery={project.gallery} />
       {project.body && <ProjectBody code={project.body} />}
       <NextProject next={getNext(project.slug)} />

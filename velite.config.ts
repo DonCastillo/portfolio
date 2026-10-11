@@ -50,7 +50,11 @@ const projects = defineCollection({
       .array(s.object({ value: s.string(), label: s.string() }))
       .max(4)
       .optional(),
+    // Case-study sections. Problem, solution and results are optional and hidden when empty.
+    problem: s.string().optional(), // what wasn't working, for whom (2–3 sentences)
+    solution: s.string().optional(), // what was built to fix it (1–2 sentences)
     highlights: s.array(s.string()).min(2).max(5),
+    results: s.array(s.string()).min(1).max(5).optional(), // qualitative outcomes; don't repeat metrics
     // A flat list, or labelled groups ("App", "Backend & CMS") for projects with
     // several parts. Flat lists become one unlabelled group, so pages only see groups.
     stack: s
