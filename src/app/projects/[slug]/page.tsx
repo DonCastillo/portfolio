@@ -55,9 +55,12 @@ export default async function ProjectPage({
     { id: "stack", label: "Tech stack" },
     project.results && { id: "results", label: "Results" },
   ].filter((item): item is TocItem => !!item);
+  const hasToc = toc.length >= 3;
 
   return (
-    <article className="relative">
+    // With the TOC showing (32px gap + 160px = 192px), shift left by half so the
+    // column and TOC sit centred together beside the sidebar.
+    <article className={`relative ${hasToc ? "min-[1440px]:right-24" : ""}`}>
       <ProjectHeader project={project} />
       <ProjectLinks links={project.links} sourceNote={project.sourceNote} />
       <ProjectHero project={project} />
@@ -74,7 +77,7 @@ export default async function ProjectPage({
       <NextProject next={getNext(project.slug)} />
 
       {/* Only from 1440px, where it fits in the margin right of the 760px column. */}
-      {toc.length >= 3 && (
+      {hasToc && (
         <aside className="absolute top-0 left-full ml-8 hidden h-full w-40 min-[1440px]:block">
           <div className="sticky top-22">
             <ProjectToc items={toc} />
