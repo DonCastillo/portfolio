@@ -5,6 +5,8 @@ import { useState } from "react";
 type DemoVideoProps = {
   url: string;
   title: string;
+  /** Shown behind the play button until the video loads (the project cover). */
+  poster?: { src: string; fit: "cover" | "contain" };
 };
 
 /** YouTube video ID from a watch, youtu.be, embed or shorts URL. */
@@ -25,14 +27,18 @@ function youTubeId(url: string): string | undefined {
   return undefined;
 }
 
-/** Poster with a play button. The YouTube iframe loads only after the click. */
-export function DemoVideo({ url, title }: DemoVideoProps) {
+/** Poster (the cover, or a dark box) with a play button. The YouTube iframe loads only after the click. */
+export function DemoVideo({ url, title, poster }: DemoVideoProps) {
   const [playing, setPlaying] = useState(false);
   const id = youTubeId(url);
   if (!id) return null;
 
   return (
-    <div className="relative mt-12 aspect-video overflow-hidden rounded-lg bg-ink">
+    <div
+      className={`relative mt-12 aspect-video overflow-hidden rounded-lg ${
+        poster ? "border border-border bg-placeholder" : "bg-ink"
+      }`}
+    >
       {playing ? (
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
@@ -47,10 +53,24 @@ export function DemoVideo({ url, title }: DemoVideoProps) {
           onClick={() => setPlaying(true)}
           className="group absolute inset-0 flex size-full items-center justify-center"
         >
+          {poster && (
+            // Decorative: the button's label already says what it does.
+            // eslint-disable-next-line @next/next/no-img-element -- static export; images are pre-optimized by `pnpm images`
+            <img
+              src={poster.src}
+              alt=""
+              loading="eager"
+              decoding="async"
+              className={`absolute inset-0 size-full ${
+                poster.fit === "contain" ? "object-contain p-4" : "object-cover"
+              }`}
+            />
+          )}
           <span className="sr-only">Play {title} demo video</span>
+          {/* Border and shadow keep the button visible on light posters. */}
           <span
             aria-hidden
-            className="flex size-16 items-center justify-center rounded-full bg-white text-ink transition-transform group-hover:scale-105 motion-reduce:transition-none md:size-20"
+            className="relative flex size-16 items-center justify-center rounded-full border border-border-strong bg-white text-ink shadow-lg transition-transform group-hover:scale-105 motion-reduce:transition-none md:size-20"
           >
             <svg
               viewBox="0 0 24 24"

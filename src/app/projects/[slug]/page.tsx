@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { DemoVideo } from "@/components/project/DemoVideo";
 import { Gallery } from "@/components/project/Gallery";
 import { Highlights } from "@/components/project/Highlights";
 import { Metrics } from "@/components/project/Metrics";
 import { NextProject } from "@/components/project/NextProject";
 import { ProjectBody } from "@/components/project/ProjectBody";
 import { ProjectHeader } from "@/components/project/ProjectHeader";
+import { ProjectHero } from "@/components/project/ProjectHero";
 import { ProjectLinks } from "@/components/project/ProjectLinks";
 import { ProjectSummary } from "@/components/project/ProjectSummary";
 import { StackTags } from "@/components/project/StackTags";
@@ -44,9 +44,7 @@ export default async function ProjectPage({
     <article>
       <ProjectHeader project={project} />
       <ProjectLinks links={project.links} sourceNote={project.sourceNote} />
-      {project.links.demo && (
-        <DemoVideo url={project.links.demo} title={project.title} />
-      )}
+      <ProjectHero project={project} />
       <Gallery gallery={project.gallery} />
       {project.metrics && <Metrics metrics={project.metrics} />}
       <ProjectSummary title="Problem" id="problem" text={project.problem} />
