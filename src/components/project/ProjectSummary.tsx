@@ -13,7 +13,7 @@ export function ProjectSummary({ title, id, text }: ProjectSummaryProps) {
       <h2 id={id} className="text-[22px] font-semibold tracking-tight text-ink">
         {title}
       </h2>
-      <p className="mt-4 max-w-170 text-[15px] leading-relaxed text-ink-2 md:text-base">
+      <p className="mt-4 text-[15px] leading-relaxed text-ink-2 md:text-base">
         {text}
       </p>
     </section>
