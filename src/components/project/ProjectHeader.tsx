@@ -27,7 +27,7 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
   ].filter((item) => !!item);
 
   return (
-    <header>
+    <header id="overview">
       <div className="flex items-center justify-between gap-4">
         <Link
           href="/projects"

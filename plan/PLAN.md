@@ -229,7 +229,7 @@ Rules:
 - Grid: `repeat(auto-fit, minmax(320px, 1fr))`.
 
 ### Project `/projects/[slug]`
-Order: ← All projects · **Title** · Summary · Meta line (role · client/event · period · team) · **Links** (Live ↗, Demo video ↗, GitHub ↗ or source note) · **Demo video** (cover as poster + play button, loads on click; without a video, the cover image alone) · **Gallery** (one-row carousel; lightbox on click) · **Metrics** (if any) · **Problem** (if any) · **Solution** (if any) · **What I did** (highlights) · **Tech stack** · **Results** (if any; qualitative, not the metrics) · optional MDX body · **Next project →**.
+Order: ← All projects · **Title** · Summary · Meta line (role · client/event · period · team) · **Links** (Live ↗, Demo video ↗, GitHub ↗ or source note) · **Demo video** (cover as poster + play button, loads on click; without a video, the cover image alone) · **Gallery** (one-row carousel; lightbox on click) · **Metrics** (if any) · **Problem** (if any) · **Solution** (if any) · **What I did** (highlights) · **Tech stack** · **Results** (if any; qualitative, not the metrics) · optional MDX body · **Next project →**. From 1440px wide, an "On this page" list floats in the right margin (only when a page has 3+ sections), highlighting the section in view.
 
 ### Contact `/contact`
 - Fields: name, email, message, plus a hidden honeypot. All are labelled `<label>`s with native validation.
