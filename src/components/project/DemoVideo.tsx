@@ -67,10 +67,10 @@ export function DemoVideo({ url, title, poster }: DemoVideoProps) {
             />
           )}
           <span className="sr-only">Play {title} demo video</span>
-          {/* Border and shadow keep the button visible on light posters. */}
+          {/* Accent fill and shadow keep the button visible on light and dark posters. */}
           <span
             aria-hidden
-            className="relative flex size-16 items-center justify-center rounded-full border border-border-strong bg-white text-ink shadow-lg transition-transform group-hover:scale-105 motion-reduce:transition-none md:size-20"
+            className="relative flex size-16 items-center justify-center rounded-full bg-accent text-white shadow-lg transition group-hover:scale-105 group-hover:bg-accent-hover motion-reduce:transition-none md:size-20"
           >
             <svg
               viewBox="0 0 24 24"
