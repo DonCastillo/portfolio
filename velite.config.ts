@@ -40,7 +40,7 @@ const projects = defineCollection({
     team: s.object({ size: s.number(), role: s.string() }).optional(),
 
     links: s.object({
-      github: s.string().url().optional(),
+      source: s.string().url().optional(), // repo on GitHub, GitLab, Bitbucket or elsewhere
       demo: s.string().url().optional(), // demo video
       live: s.string().url().optional(), // live site / app store
       website: s.string().url().optional(), // the project's own site, e.g. a research study's

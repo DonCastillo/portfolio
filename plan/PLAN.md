@@ -117,7 +117,7 @@ const projects = defineCollection({
     team: s.object({ size: s.number(), role: s.string() }).optional(),
 
     links: s.object({
-      github: s.string().url().optional(),
+      source: s.string().url().optional(), // repo on GitHub, GitLab, Bitbucket or elsewhere
       demo: s.string().url().optional(),     // demo video
       live: s.string().url().optional(),     // live site / app store
     }),
@@ -143,7 +143,7 @@ const projects = defineCollection({
 ```
 
 Rules:
-- `links.*` are all optional. The UI **hides** missing links. If `github` is missing and `sourceNote` is set, the note is shown instead of a dead button.
+- `links.*` are all optional. The UI **hides** missing links. If `source` is missing and `sourceNote` is set, the note is shown instead of a dead button.
 - `highlights` describe **what I did**, starting with a verb, ideally with a number.
 - For team projects, highlights must say which part I built.
 - Gallery: `mobile` images render in portrait 9:19 tiles; `desktop` images render full-width 16:9 below them.

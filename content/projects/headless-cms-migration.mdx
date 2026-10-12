@@ -1,15 +1,23 @@
 ---
-# PLACEHOLDER CONTENT: fake copy, metrics and image paths to build against.
-# Replace every field with real details before launch (see PLAN.md section 11).
+# TODO: cover is still a placeholder. Add a real image.
 title: Headless CMS Migration
 slug: headless-cms-migration
 category: professional
-summary: Moved 20+ client sites from hand-edited static Hugo builds to a shared Directus CMS, so clients edit their own content and changes ship in minutes.
-# problem: What wasn't working, for whom, and why it mattered (2–3 sentences).
-# solution: What you built to fix it, in one or two sentences.
-# results:
-#   - What changed after launch (don't repeat the metrics)
-role: Full Stack Developer
+summary: Led the move of client Hugo sites from Forestry to Directus before Forestry shut down, turning Markdown pages into database content that builds back into each site.
+problem: >-
+  Client websites were Hugo static sites edited through Forestry.io, which
+  announced it would end support and shut down in March 2023. Every site
+  needed a new CMS before then, without losing content or changing how the
+  sites were built and deployed.
+solution: >-
+  A move to Directus as a headless CMS: existing Markdown pages became
+  database rows, and each site's build was changed to generate its pages
+  from that content.
+results:
+  - Client sites moved off Forestry before it shut down.
+  - Site content now lives in one CMS database instead of Markdown files spread across repos.
+  - Each site still builds as a static Hugo site, so hosting and deployment stayed the same.
+role: Lead Developer
 client: Tangle Media
 period: "2022 – 2023"
 status: shipped
@@ -17,31 +25,25 @@ status: shipped
 links: {}
 sourceNote: Source private (client work)
 
-metrics:
-  - { value: "20+", label: "sites migrated" }
-  - { value: "weeks", label: "delivery, down from months" }
-
 highlights:
-  - Designed a shared Directus schema that covers the content models of 20+ client sites.
-  - Wrote migration scripts that moved existing Hugo Markdown and front matter into Directus without manual re-entry.
-  - Built preview builds on Netlify so clients see their edits before publishing.
-  - Cut new-site delivery from months to weeks by reusing one CMS setup across clients.
+  - Led the development team through the move from Forestry to Directus across client sites.
+  - Wrote a migration script with Knex that converts Markdown pages and their front matter into rows in Directus.
+  - Modelled each content section as a Directus collection, with one row per page.
+  - Changed each site's build so Hugo pulls content from Directus and generates a Markdown file for each row.
 
 stack:
-  - Directus
-  - Hugo
-  - Node.js
-  - PostgreSQL
-  - Netlify CI/CD
+  - label: CMS & backend
+    items: [Directus, Node.js, Knex, MySQL, Redis, Docker]
+  - label: Frontend
+    items: [Hugo, Forestry]
+  - label: Hosting
+    items: [Netlify, WHM]
+  - label: Formats
+    items: [Markdown, TOML, YAML, JSON]
 
 cover:
   src: /projects/headless-cms-migration/cover.webp
-  alt: Architecture diagram showing Directus feeding content to Hugo builds on Netlify
-
-gallery:
-  - src: /projects/headless-cms-migration/01.webp
-    alt: Before and after architecture, from hand-edited Hugo repos to a shared Directus CMS
-    caption: Hugo to Directus
+  alt: Diagram of Markdown pages moving from Forestry into Directus and back into Hugo builds
 
 order: 3
 ---

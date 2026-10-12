@@ -6,15 +6,27 @@ type ProjectLinksProps = {
   sourceNote?: string;
 };
 
-/** Live ↗ · Demo video ↗ · Project website ↗ · GitHub ↗. Missing links are hidden; without GitHub, the source note shows instead. */
+const sourceHosts: Record<string, string> = {
+  "github.com": "GitHub",
+  "gitlab.com": "GitLab",
+  "bitbucket.org": "Bitbucket",
+};
+
+/** Names the source button after the repo's host, falling back to "Source code". */
+function sourceLabel(url: string): string {
+  const host = new URL(url).hostname.replace(/^www\./, "");
+  return sourceHosts[host] ?? "Source code";
+}
+
+/** Live ↗ · Demo video ↗ · Project website ↗ · GitHub/GitLab/… ↗. Missing links are hidden; without a source link, the source note shows instead. */
 export function ProjectLinks({ links, sourceNote }: ProjectLinksProps) {
   const items = [
     links.live && { href: links.live, label: "Live app" },
     links.demo && { href: links.demo, label: "Demo video" },
     links.website && { href: links.website, label: "Project website" },
-    links.github && { href: links.github, label: "GitHub" },
+    links.source && { href: links.source, label: sourceLabel(links.source) },
   ].filter((item) => !!item);
-  const note = !links.github && sourceNote;
+  const note = !links.source && sourceNote;
 
   if (items.length === 0 && !note) return null;
 
@@ -31,7 +43,7 @@ export function ProjectLinks({ links, sourceNote }: ProjectLinksProps) {
           {label}
         </ButtonLink>
       ))}
-      {note && <p className="font-mono text-xs text-subtle">GitHub: {note}</p>}
+      {note && <p className="font-mono text-xs text-subtle">{note}</p>}
     </div>
   );
 }
