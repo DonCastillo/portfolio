@@ -1,53 +1,48 @@
 ---
-# PLACEHOLDER CONTENT: fake copy, metrics, links and image paths to build against.
-# Replace every field with real details before launch (see PLAN.md section 11).
-title: Media Optimization Pipeline
+# TODO: period, cover and gallery are still placeholders. Confirm the dates and add real images.
+title: Website Asset Optimization
 slug: media-optimization-pipeline
+draft: true
 category: professional
-summary: An automated pipeline that resizes, compresses and serves images and video for a portfolio of client websites, cutting bandwidth without any manual work from editors.
-# problem: What wasn't working, for whom, and why it mattered (2–3 sentences).
-# solution: What you built to fix it, in one or two sentences.
-# results:
-#   - What changed after launch (don't repeat the metrics)
+summary: A media setup for client websites that routes CMS uploads to the right storage, optimizes assets on the frontend, and keeps files out of the site repos.
+problem: >-
+  Images and files are usually the heaviest part of a content-driven website.
+  The goal was to make client sites load faster, keep media available
+  independently of the CMS, and keep site repos lean as content grew.
+solution: >-
+  A CMS extension that decides where each upload is stored, frontend modules
+  that optimize assets, and a build step that keeps media out of the site repos.
+results:
+  - Media is served separately from the CMS, so sites keep showing images if the CMS is unavailable.
+  - Pages load faster, including on slow connections, now that assets are a smaller share of page weight.
+  - Media delivery became more efficient, with smaller files served from a CDN.
+  - Site repos stay small and build faster without media files committed to them.
 role: Full Stack Developer
 client: Tangle Media
 period: "2021 – 2023"
 status: shipped
 
-links:
-  live: https://example.com
+links: {}
 sourceNote: Source private (client work)
 
-metrics:
-  - { value: "−90%", label: "bandwidth" }
-  - { value: "2.1s", label: "faster LCP on mobile" }
-  - { value: "20+", label: "sites on the pipeline" }
-
 highlights:
-  - Built an upload-time pipeline that converts images to WebP and AVIF in five responsive sizes.
-  - Cut median page weight by 90% across 20+ client sites by replacing hand-exported assets.
-  - Moved video to adaptive streaming with generated posters, so pages no longer load full MP4 files.
-  - Wrote the cache and CDN rules that let processed media be served for a year without re-fetching.
+  - Built a Directus storage extension that sends each upload to local storage or a cloud media service, using configurable rules.
+  - Wrote reusable Hugo modules that frontend developers use to compress and resize images.
+  - Built a build-time tool that brings CMS media into sites without committing files to their repos.
+  - Migrated media from earlier client sites onto the new setup.
+  - Adopted across the company's client sites as the standard way to handle media.
 
 stack:
-  - Node.js
-  - TypeScript
-  - Sharp
-  - FFmpeg
-  - AWS S3
-  - CloudFront
+  - label: Backend
+    items: [Directus, TypeScript, Cloudinary]
+  - label: Frontend
+    items: [Hugo]
+  - label: Build tooling
+    items: [Go]
 
 cover:
   src: /projects/media-optimization-pipeline/cover.webp
-  alt: Diagram of the upload, processing and delivery stages of the media pipeline
-
-gallery:
-  - src: /projects/media-optimization-pipeline/01.webp
-    alt: Architecture diagram from editor upload through processing to the CDN
-    caption: Pipeline architecture
-  - src: /projects/media-optimization-pipeline/02.webp
-    alt: Bar chart of page weight before and after the pipeline on five client sites
-    caption: Page weight before and after
+  alt: Diagram of media flowing from the CMS to storage and on to the website
 
 featured: true
 order: 2

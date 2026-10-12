@@ -29,7 +29,13 @@ export function categoryName(category: Category): string {
   return categoryNames[category];
 }
 
-const sorted = [...projects].sort((a, b) => a.order - b.order);
+// Drafts show up in `next dev` for previewing but are never built for production,
+// so they get no page, card, sitemap entry or OG image.
+const showDrafts = process.env.NODE_ENV !== "production";
+
+const sorted = projects
+  .filter((project) => showDrafts || !project.draft)
+  .sort((a, b) => a.order - b.order);
 
 /** All projects, sorted by `order`. */
 export function getProjects(): Project[] {

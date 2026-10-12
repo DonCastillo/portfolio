@@ -85,6 +85,7 @@ const projects = defineCollection({
       .default([]),
 
     featured: s.boolean().default(false),
+    draft: s.boolean().default(false), // left out of production builds; still shown in `next dev`
     order: s.number(),
     body: optionalMdx, // optional longer write-up
   }),

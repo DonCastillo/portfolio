@@ -18,8 +18,9 @@ export function Contact() {
         Contact
       </h2>
       <p className="mt-3 max-w-150 text-lg leading-relaxed">
-        Open to full stack and frontend roles in Calgary or remote. Send a note
-        and I&apos;ll reply within two business days.
+        Open to full stack roles in Calgary or remote, and available for
+        contract or flexible part-time work. Send a note and I&apos;ll reply
+        within two business days.
       </p>
 
       <div className="mt-8 grid gap-12 lg:grid-cols-[minmax(0,1fr)_16rem]">
